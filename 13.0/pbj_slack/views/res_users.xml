@@ -1,0 +1,33 @@
+<odoo>
+    <record id="res_users_form_view" model="ir.ui.view">
+        <field name="name">res.users.form.view</field>
+        <field name="model">res.users</field>
+        <field name="inherit_id" ref="base.view_users_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='alias_id']" position="after">
+                <field name="slack_channel_id"/>
+                <div colspan="2">
+                    <button type="object" name="action_slack_update_channels" string="Update Channel List" class="btn btn-link"/>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+    <record id="res_users_tree_view" model="ir.ui.view">
+        <field name="name">res.users.tree.view</field>
+        <field name="model">res.users</field>
+        <field name="arch" type="xml">
+            <tree editable="bottom" create="0">
+                <field name="name"/>
+                <field name="slack_channel_id"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_res_users_slack" model="ir.actions.act_window">
+        <field name="name">Assign Slack Channels</field>
+        <field name="res_model">res.users</field>
+        <field name="view_mode">tree</field>
+        <field name="view_id" ref="pbj_slack.res_users_tree_view"/>
+    </record>
+</odoo>

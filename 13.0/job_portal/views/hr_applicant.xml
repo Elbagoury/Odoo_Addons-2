@@ -1,0 +1,262 @@
+<odoo>
+    <data>
+        <record id="crm_case_form_view_job_inheirt" model="ir.ui.view">
+            <field name="name">crm.case.form.view.job</field>
+            <field name="model">hr.applicant</field>
+            <field name="inherit_id"
+                   ref="hr_recruitment.hr_applicant_view_form"/>
+            <field name="arch" type="xml">
+
+                <!--<field name="languages_known" string="Languages Known"/>-->
+                <field name="partner_id" position="attributes">
+                    <attribute name="string">Residential address</attribute>
+                </field>
+
+                <field name="description" position="before">
+                    <notebook>
+                        <page string="Personal Info">
+                            <group>
+
+                                <group string="Citizenship &amp; Other Info">
+                                    <field name="country_id" required="True"/>
+                                    <field name="identification_id"
+                                           required="True"/>
+                                    <field name="passport_id"/>
+                                </group>
+                                <group string=" Address"
+                                      >
+                                    <field name="street_ht"
+                                           />
+                                    <field name="street2_ht"/>
+                                    <field name="city_ht"
+                                           />
+                                    <field name="zip_ht"
+                                           />
+                                    <field name="state_id_ht"
+                                           />
+
+
+                                </group>
+                                <group string="Status">
+                                    <field name="gender" required="True"/>
+                                    <field name="marital" required="True"/>
+                                </group>
+                                <group string="Birth">
+                                    <field name="birthday" required="True"/>
+                                    <field name="place_of_birth"/>
+                                    <field name="country_of_birth_lt" string="Country Of Birth"/>
+                                </group>
+
+                            </group>
+                        </page>
+
+                        <page string="Academic Experiences"
+                              groups="base.group_user,base.group_hr_user">
+                            <field name="academic_ids"
+                                   context="{'default_employee_id': active_id}">
+                                <tree string="Academic Experiences">
+                                    <field name="name" string="Qualification"/>
+                                    <field name="study_field"/>
+                                    <field name="organization"
+                                           string="Institution"/>
+                                    <field name="location"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                    <field name="grade"/>
+                                </tree>
+                                <form string="Academic Experience">
+                                    <group>
+                                        <group name="main">
+                                            <field name="name"
+                                                   string="Qualification"/>
+                                            <field name="study_field"/>
+                                            <field name="start_date"/>
+                                            <field name="is_still"
+                                                   string="Present"/>
+                                            <field name="end_date"
+                                                   attrs="{'invisible':[('is_still', '=', True)]}"/>
+                                            <field name="grade"/>
+                                        </group>
+                                        <group>
+                                            <field name="organization"
+                                                   string="Institution"/>
+                                            <field name="location"/>
+                                        </group>
+                                    </group>
+                                    <separator string="Activities"
+                                               colspan="4"/>
+                                    <field name="activities"/>
+                                    <separator string="Description"
+                                               colspan="4"/>
+                                    <field name="description" colspan="4"
+                                           nolabel="1"/>
+                                </form>
+                            </field>
+                        </page>
+
+                        <page string="Professional Experiences"
+                              groups="base.group_user,base.group_hr_user">
+                            <field name="experience_ids"
+                                   context="{'default_applicant_id': active_id}">
+                                <tree string="Professional Experiences">
+                                    <field name="name" string="Position"/>
+                                    <field name="organization"
+                                           string="Employer"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                </tree>
+                                <form string="Professional Experience">
+                                    <group>
+                                        <group name="main">
+                                            <field name="name"
+                                                   string="Position"/>
+                                            <field name="organization"
+                                                   string="Employer"/>
+                                            <field name="location"/>
+                                            <field name="type"
+                                                   string="Work Type"/>
+                                        </group>
+                                        <group>
+                                            <field name="start_date"/>
+                                            <field name="is_still"
+                                                   string="Present"/>
+                                            <field name="end_date"
+                                                   attrs="{'invisible':[('is_still', '=', True)]}"/>
+                                            <!-- todo: notice_period is no longer used in employee form-->
+                                            <field name="notice_period"
+                                                   attrs="{'invisible':[('is_still', '=', False)]}"/>
+                                        </group>
+                                        <group string="For Verification">
+                                            <field name="referee_name"/>
+                                            <field name="referee_position"/>
+                                            <field name="referee_contact"/>
+                                        </group>
+                                    </group>
+                                    <separator string="Description"
+                                               colspan="4"/>
+                                    <field name="description" colspan="4"
+                                           nolabel="1"/>
+                                </form>
+                            </field>
+                        </page>
+
+                        <page string="Certifications"
+                              groups="base.group_user,base.group_hr_user">
+                            <field name="certification_ids"
+                                   context="{'default_applicant_id': active_id}">
+                                <tree string="Certifications">
+                                    <field name="name" string="Certification"/>
+                                    <field name="certification"
+                                           string="# Certificate"/>
+                                    <field name="organization"
+                                           string="Issued By"/>
+                                    <field name="start_date"/>
+                                    <field name="end_date"/>
+                                </tree>
+                                <form string="Certifications">
+                                    <group>
+                                        <group name="main">
+                                            <field name="name"
+                                                   string="Certification"/>
+                                            <field name="certification"
+                                                   string="# Certification"/>
+                                            <field name="start_date"/>
+                                            <field name="is_still"/>
+                                            <field name="end_date"
+                                                   attrs="{'invisible':[('is_still', '=', True)]}"/>
+                                        </group>
+                                        <group>
+                                            <field name="organization"
+                                                   string="Issued By"/>
+                                            <field name="location"/>
+                                        </group>
+                                    </group>
+                                    <separator string="Description"
+                                               colspan="4"/>
+                                    <field name="description" colspan="4"
+                                           nolabel="1"/>
+                                </form>
+                            </field>
+                        </page>
+                        <page string="reference" groups="base.group_hr_user">
+                            <group string="Job reference">
+                                <group>
+                                    <field name="ref_name"/>
+                                    <field name="ref_org"/>
+                                </group>
+                                <group>
+                                    <field name="ref_rel"/>
+                                    <field name="ref_contact"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </field>
+            </field>
+
+        </record>
+
+        <record id="update_sorry" model="website.page">
+            <field name="url">/job-update-sorry</field>
+            <field name="website_published">True</field>
+            <field name="name">Sorry You can not update the application after submition.</field>
+            <field name="type">qweb</field>
+            <field name="key">job_portal.update_sorry</field>
+            <field name="arch" type="xml">
+                <t name="Sorry You can not update the application after submition." t-name="job_portal.update_sorry">
+                    <t t-call="website.layout">
+                        <div id="wrap">
+                            <div class="oe_structure">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <h1 class="text-center">Oops!</h1>
+                                            <p class="text-center">
+                                                Your application has been submited already.You can not edit the application after submition.
+                                            </p>
+                                        </div>
+                                        <t t-if="request.session.get('form_builder_model_model', '') == 'hr.applicant'">
+                                            <t t-set="job" t-value="request.website._website_form_last_record().sudo().job_id"/>
+                                            <t t-set="responsible" t-value="job and job.user_id.website_published and job.user_id "/>
+                                        </t>
+                                        <t t-if="responsible">
+                                            <div class="col-lg-12">
+                                                <h3 class="mb32 text-center">Your application has been sent to:</h3>
+                                            </div>
+                                            <div class="col-lg-1 offset-lg-4">
+                                                <p t-field="responsible.image_small" t-options="{'widget': 'image', 'class': 'rounded-circle d-block mx-auto'}"/>
+                                            </div>
+                                            <div class="col-lg-5 o_responsible_data">
+                                                <h4 class="mt0" t-field="responsible.name"/>
+                                                <p t-field="responsible.function"/>
+                                                <t t-if='responsible.email'>
+                                                    <i class="fa fa-envelope" role="img" aria-label="Email" title="Email"></i> <a t-attf-href="mailto:#{responsible.email}" t-esc="responsible.email"/>
+                                                </t>
+                                                <t t-if='responsible.phone'>
+                                                    <br/><i class="fa fa-phone" role="img" aria-label="Phone" title="Phone"></i> <span t-field="responsible.phone"/>
+                                                </t>
+                                            </div>
+                                            <div class="col-lg-12 mt32 text-center">
+                                                <span>
+                                                    We usually reply between one and three days.<br/>
+                                                    Feel free to contact him/her if you have further questions.
+                                                </span>
+                                            </div>
+                                        </t>
+                                    </div>
+                                    <div class="row" id="o_recruitment_thank_cta">
+                                        <div class="col-lg-12 text-center mt32 mb32">
+                                            In the meantime,
+                                            <h3 class="mt8 mb32">Look around on our website:</h3>
+                                            <a role="button" href="/" class="btn btn-primary btn-lg">Continue To Our Website</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </t>
+                </t>
+            </field>
+        </record>
+    </data>
+</odoo>

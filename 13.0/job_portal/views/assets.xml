@@ -1,0 +1,260 @@
+<odoo>
+    <data>
+        <!--assets frontend -->
+        <template id="website_pos_assets_frontend"
+                  inherit_id="website.assets_frontend"
+                  name="assets of website">
+            <xpath expr="//link[last()]" position="after">
+                <link href="/job_portal/static/src/css/yamm.css"
+                      rel="stylesheet" type="text/css"/>
+                <link rel="stylesheet" type="text/css"
+                      href="/job_portal/static/src/css/style.css"/>
+                <script type="text/javascript"
+                        src="/job_portal/static/src/js/validator.js"/>
+                <script type="text/javascript"
+                        src='/job_portal/static/src/js/main.js'></script>
+            </xpath>
+        </template>
+
+        <template id="my_profile_link" name="Link to frontend user profile"
+                  inherit_id="portal.frontend_layout">
+            <xpath expr="//a[@id='o_logout']" position="before">
+                <a href="/my/account/" class="dropdown-item" role="menuitem">My Profile</a>
+            </xpath>
+        </template>
+
+        <!-- id for heading navigation bar -->
+        <template id="layout_inherit" inherit_id="portal.frontend_layout">
+            <xpath expr="//header/nav" position="attributes">
+                <attribute name="id">nav</attribute>
+            </xpath>
+        </template>
+        <!-- id for heading navigation bar -->
+
+        <template name="scroll_btn_inherit" id="scroll_top_btn"
+                  inherit_id="website.layout">
+            <xpath expr='//div[@id="footer"]' position="replace">
+                <div id="footer" class="container-fluid hidden-print"
+                     t-if='not no_footer'>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <div class="footer_content mt32 mb32 col-lg-4 text-center">
+                                <h4>Get In Touch</h4>
+                                <div class="mt4 col-xs-5">Jay Vora</div>
+                                <div class="mt4 col-xs-7">: +91-987-935-4457</div>
+                                <div class="mt4 col-xs-5">Husen Daudi</div>
+                                <div class="mt4 col-xs-7">: +91-903-347-2982</div>
+                                <div class="mt4 col-xs-5">
+                                    <span t-field="res_company.name"></span>
+                                </div>
+                                <ul class="list-unstyled">
+                                    <li t-if="res_company.phone" class="mt8"
+                                        t-ignore="true">
+                                        <i class="fa fa-phone"></i>
+                                        <span t-field="res_company.phone"></span>
+                                    </li>
+                                    <li t-if="res_company.email" class="mt8"
+                                        t-ignore="true">
+                                        <i class="fa fa-envelope"></i>
+                                        <span t-field="res_company.email"></span>
+                                    </li>
+                                    <li t-if="website.social_skype" class="mt8"
+                                        t-ignore="true">
+                                        <i class="fa fa-skype"></i>
+                                        <span t-field="website.social_skype"></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="footer_content mt32 mb32 col-lg-4 text-center">
+                                <h4 class="mt16">Connect with us</h4>
+                                <ul class="list-unstyled mt16 mb16">
+                                    <li class="mb16" t-ignore="true">
+                                        <i class="fa fa-map-marker"></i> &#160;
+                                        <span t-field="res_company.street"></span>,
+                                        <br/>
+                                        <t t-if="res_company.street2">
+                                            &#160;&#160;&#160;&#160;&#160;<span
+                                                t-field="res_company.street2"></span>,
+                                            <br/>
+                                        </t>
+                                        <t t-if="res_company.city">
+                                            &#160;&#160;&#160;&#160;&#160;<span
+                                                t-field="res_company.city"></span>,
+                                        </t>
+                                        <t t-if="res_company.state_id.name">
+                                            <span t-field="res_company.state_id.name"></span>
+                                            ,
+                                        </t>
+                                        <t t-if="res_company.country_id.name">
+                                            <span t-field="res_company.country_id.name"></span>
+                                            .
+                                            <br/>
+                                        </t>
+                                        <t t-if="res_company.zip">
+                                            &#160;&#160;&#160;&#160; Pin - <span
+                                                t-field="res_company.zip"></span>.
+                                        </t>
+                                    </li>
+                                </ul>
+                                <div class="mt16 mb16">
+                                    <ul class="social-network social-circle">
+                                        <li>
+                                            <a t-att-href="website.social_facebook"
+                                               t-if="website.social_facebook"
+                                               class="icoFacebook"
+                                               title="Facebook">
+                                                <i class="fa fa-facebook"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a t-att-href="website.social_linkedin"
+                                               t-if="website.social_linkedin"
+                                               class="icoLinkedin"
+                                               title="Linkedin">
+                                                <i class="fa fa-linkedin"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a t-att-href="website.social_twitter"
+                                               t-if="website.social_twitter"
+                                               class="icoTwitter"
+                                               title="Twitter">
+                                                <i class="fa fa-twitter"></i>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a t-att-href="website.social_youtube"
+                                               t-if="website.social_youtube"
+                                               class="icoYoutube" title="Youtube">
+                                                <i class="fa fa-youtube-play"/>
+                                            </a>
+                                        </li>
+<!--                                        <li>-->
+<!--                                            <a t-att-href="website.social_googleplus"-->
+<!--                                               t-if="website.social_googleplus"-->
+<!--                                               class="icoGoogleplus"-->
+<!--                                               title="Googleplus">-->
+<!--                                                <i class="fa fa-google-plus"/>-->
+<!--                                            </a>-->
+<!--                                        </li>-->
+                                        <li>
+                                            <a t-att-href="website.social_github"
+                                               t-if="website.social_github"
+                                               class="icoGithub" title="Github">
+                                                <i class="fa fa-github"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a t-att-href="website.social_vimeo"
+                                               t-if="website.social_vimeo"
+                                               class="icoVimeo" title="Vimeo">
+                                                <i class="fa fa-vimeo"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a t-att-href="website.social_rss"
+                                               t-if="website.social_rss"
+                                               class="icoRss" title="Rss">
+                                                <i class="fa fa-rss"/>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a t-att-href="website.social_instagram"
+                                               t-if="website.social_instagram"
+                                               class="icoInstagram"
+                                               title="Instagram">
+                                                <i class="fa fa-instagram"/>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="footer_content mt32 mb32 col-lg-4 text-center"
+                                 id="info">
+                                <h4 class="mt16">Useful links</h4>
+                                <div class="mt16">
+                                    <ul class="list-unstyled">
+                                        <li>
+                                            <a href="/">Home</a>
+                                        </li>
+                                        <li>
+                                            <a href="/contactus">Contact us</a>
+                                        </li>
+                                        <li>
+                                            <a href="/jobs">Jobs</a>
+                                        </li>
+                                        <li groups="base.group_erp_manager">
+                                            <a href="/post_job">Post Job</a>
+                                        </li>
+                                        <li>
+                                            <a href="/industry_practices">Industry
+                                                Practices
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="job_portal_apply_template"
+                  inherit_id="website_hr_recruitment.detail"
+                  name="My Custom Job Detail">
+            <xpath expr="//div[@id='wrap']" position="replace">
+                <div id="wrap" class="js_hr_recruitment">
+                    <div class="oe_structure"/>
+                    <section class="mb16 bg-white">
+                        <div class="container">
+                            <div class="pull-right">
+                                <div class="btn btn-primary btn-lg mt32 mb4" groups="base.group_system">
+                                    <t t-esc="job.application_count"/>
+                                    Applicants
+                                </div>
+                                <t t-if="not request.session.uid">
+                                    <a t-attf-href="/web/login"
+                                       class="btn btn-primary btn-lg pull-right mt32 mb4">
+                                        Sign Up/Login
+                                    </a>
+                                </t>
+                            </div>
+                            <label class="mb0 mt16">
+                                <a href="/jobs">Jobs</a>
+                            </label>
+                            <h1 class="mb0 mt0" t-field="job.name"/>
+                            <h4 class="mt0" t-field="job.address_id"
+                                t-field-options='{
+                                "widget": "contact",
+                                "fields": ["city"],
+                                "no_tag_br": True
+                            }'/>
+                        </div>
+                    </section>
+
+                    <div t-field="job.website_description"/>
+
+                    <div class="oe_structure">
+                        <section class="o_job_bottom_bar mt32 mb32">
+                            <div class="text-center">
+                                <t t-if="request.session.uid">
+                                    <a t-attf-href="/jobs/apply/#{job.id}"
+                                       class="btn btn-primary btn-lg">Apply
+                                        Now!
+                                    </a>
+                                </t>
+                                <t t-if="not request.session.uid">
+                                    <a t-attf-href="/jobs/apply/#{job.id}"
+                                       class="btn btn-primary btn-lg">Sign
+                                        Up/Login
+                                    </a>
+                                </t>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </xpath>
+        </template>
+    </data>
+</odoo>

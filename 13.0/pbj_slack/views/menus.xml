@@ -1,0 +1,7 @@
+<odoo>
+    <menuitem name="Slack" id="menu_mail_slack_main" parent="base.menu_custom" sequence="2"/>
+    <menuitem name="Messages" id="menu_mail_slack_message" parent="menu_mail_slack_main" action="action_mail_slack_message" sequence="5"/>
+    <menuitem name="Channels" id="menu_mail_slack_channel" parent="menu_mail_slack_main" action="action_mail_slack_channel" sequence="10"/>
+    <menuitem name="Sync Channels" id="menu_mail_slack_channel_sync" parent="menu_mail_slack_main" action="action_mail_slack_channel_sync" sequence="15"/>
+    <menuitem name="Assign Channels" id="menu_res_users_slack" parent="menu_mail_slack_main" action="action_res_users_slack" sequence="20"/>
+</odoo>

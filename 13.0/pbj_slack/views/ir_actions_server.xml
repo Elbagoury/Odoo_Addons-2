@@ -1,0 +1,26 @@
+<odoo>
+    <record id="ir_actions_server_form_view" model="ir.ui.view">
+        <field name="name">ir.actions.server.form.view</field>
+        <field name="model">ir.actions.server</field>
+        <field name="inherit_id" ref="base.view_server_action_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//notebook" position="inside">
+                <page name="slack" string="Slack" attrs="{'invisible': [('state', '!=', 'slack')]}">
+                    <group>
+                        <field name="slack_channel_type"/>
+                        <field name="slack_channel_id"
+                               attrs="{'invisible': [('slack_channel_type', '!=', 'channel')], 'required': [('slack_channel_type', '=', 'channel')]}"/>
+                        <field name="slack_user_field_id" domain="[('model_id', '=', model_id), ('relation', '=', 'res.users')]"
+                               attrs="{'invisible': [('slack_channel_type', '!=', 'user')], 'required': [('slack_channel_type', '=', 'user')]}" options="{'no_create': True}"/>
+                        <div colspan="2">
+                            <button type="object" name="action_update_channels" string="Update Channel List" class="btn btn-sm btn-link" attrs="{'invisible': [('slack_channel_type', '=', False)]}"/>
+                        </div>
+
+                        <label for="slack_message" colspan="2"/>
+                        <field name="slack_message" nolabel="1" colspan="2"/>
+                    </group>
+                </page>
+            </xpath>
+        </field>
+    </record>
+</odoo>

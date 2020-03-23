@@ -1,0 +1,25 @@
+<odoo>
+    <record id="mail_slack_channel_tree_view" model="ir.ui.view">
+        <field name="name">mail.slack.channel.tree.view</field>
+        <field name="model">mail.slack.channel</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="code"/>
+                <field name="name"/>
+                <field name="topic"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_mail_slack_channel" model="ir.actions.act_window">
+        <field name="name">Slack Channels</field>
+        <field name="res_model">mail.slack.channel</field>
+        <field name="view_mode">tree</field>
+    </record>
+
+    <record id="action_mail_slack_channel" model="ir.actions.act_window">
+        <field name="name">Slack Channels</field>
+        <field name="res_model">mail.slack.channel</field>
+        <field name="view_mode">tree</field>
+    </record>
+</odoo>

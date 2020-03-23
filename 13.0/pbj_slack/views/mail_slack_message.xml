@@ -1,0 +1,20 @@
+<odoo>
+    <record id="mail_slack_message_tree_view" model="ir.ui.view">
+        <field name="name">mail.slack.message.tree.view</field>
+        <field name="model">mail.slack.message</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="user_id"/>
+                <field name="create_date" string="Create Date"/>
+                <field name="channel_id"/>
+                <field name="content"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="action_mail_slack_message" model="ir.actions.act_window">
+        <field name="name">Slack Messages</field>
+        <field name="res_model">mail.slack.message</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+</odoo>

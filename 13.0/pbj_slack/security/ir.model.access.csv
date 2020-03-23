@@ -1,0 +1,3 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_mail_slack_channel_user,mail.slack.channel.user,pbj_slack.model_mail_slack_channel,base.group_user,1,0,0,0
+access_mail_slack_message_user,mail.slack.message.user,pbj_slack.model_mail_slack_message,base.group_user,1,0,0,0
