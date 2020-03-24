@@ -1,0 +1,11 @@
+<odoo>
+    <template id="render_dashboard_widget">
+        <t t-if="not record.widget_hidden">
+            <t t-call="dashboard_widgets.render_dashboard_widget_card"/>
+            <t t-call="dashboard_widgets.render_dashboard_widget_table"/>
+
+            <t t-call="dashboard_widgets.render_dashboard_widget_notes"/>
+            <t t-call="dashboard_widgets.render_dashboard_widget_cache"/>
+        </t>
+    </template>
+</odoo>

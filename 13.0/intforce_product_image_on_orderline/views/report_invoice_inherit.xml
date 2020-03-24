@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="report_invoice_document_av" inherit_id="account.report_invoice_document">
+        	<xpath expr="//table/thead/tr/th[1]" position="before">
+        		<th>#</th>
+        		<th>Product Image</th>
+        	</xpath>
+        	<xpath expr="//table[@name='invoice_line_table']/tbody/t/tr/t/td" position="before">
+        		<td><span t-esc="line_index+1"/></td>
+        		<td>
+                    <t t-if="line.product_image"><span t-field="line.product_image"  t-options="{'widget': 'image','style':'width: 100px;height: 100px'}"/></t>
+                </td>
+        	</xpath>
+        </template>
+    </data>
+</odoo>

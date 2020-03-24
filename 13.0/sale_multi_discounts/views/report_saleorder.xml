@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+ 
+    <template id="report_saleorder_document_inherit" inherit_id="sale.report_saleorder_document">
+        <xpath expr="//table[hasclass('table')]/thead/tr/th[4]" position="replace">
+            <th t-if="doc.print_discount" class="text-right" groups="product.group_discount_per_so_line">Disc.(%)
+                <t t-set="colspan" t-value="colspan+1"/>
+            </th>
+            <th t-if="doc.print_discount_amount" class="text-right" groups="product.group_discount_per_so_line">Disc. Amount
+                <t t-set="colspan" t-value="colspan+1"/>
+            </th>
+            <th t-if="doc.print_discount" class="text-right" groups="product.group_discount_per_so_line">Disc. Unit Price
+                <t t-set="colspan" t-value="colspan+1"/>
+            </th>
+        </xpath> 
+        <xpath expr="//td[@t-if='display_discount']" position="replace">
+            <t>
+                <td t-if="doc.print_discount" class="text-right" groups="product.group_discount_per_so_line">
+                    <span t-field="line.discount"/> %
+                </td>
+                <td t-if="doc.print_discount_amount" class="text-right" groups="product.group_discount_per_so_line">
+                    <span t-field="line.discount_per_unit"/>
+                </td>
+                <td t-if="doc.print_discount" class="text-right" groups="product.group_discount_per_so_line">
+                    <span t-field="line.discounted_unit_price"/>
+                </td>
+            </t>
+        </xpath>
+        
+        <xpath expr="//tr[hasclass('border-black')]" position="after">
+            <t t-if="doc.print_discount" groups="product.group_discount_per_so_line">
+                <tr>
+                    <td>Total Discount</td>
+                    <td class="text-right">
+                        <span t-field="doc.discount_amount"
+                            t-field-options='{"widget": "monetary", "display_currency": "doc.pricelist_id.currency_id"}'/>
+                    </td>
+                </tr>
+            </t>
+        </xpath>
+    </template>
+
+</odoo>

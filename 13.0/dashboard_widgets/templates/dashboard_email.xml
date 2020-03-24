@@ -1,0 +1,10 @@
+<odoo>
+    <template id="dashboard_email">
+        <t t-set="print" t-value="True"/>
+        <div>
+            <t t-foreach="items" t-as="record">
+                <t t-raw="record.render_dashboard_markup"/>
+            </t>
+        </div>
+    </template>
+</odoo>
