@@ -1,0 +1,61 @@
+<odoo>
+    <record id='upware_brand_action' model='ir.actions.act_window'>
+        <field name="name">Merken / Soorten</field>
+        <field name="res_model">upware.brand</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="Merken / Soorten" id="upware_brand_menu" parent="stock.menu_stock_root" action="upware_brand_action"/>
+
+    <!-- Form View -->
+    <record id="upware_brand_view_form" model="ir.ui.view">
+        <field name="name">Soort</field>
+        <field name="model">upware.brand</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="name"/>
+                    </group>
+                    <group>
+                        <field name="code"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Tree(list) View -->
+    <record id="upware_brand_view_tree" model="ir.ui.view">
+        <field name="name">Merken / Soorten Lijst</field>
+        <field name="model">upware.brand</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Search View -->
+    <record id="upware_brand_view_search" model="ir.ui.view">
+        <field name="name">Merken / Soorten Zoeken</field>
+        <field name="model">upware.brand</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="name"/>
+            </search>
+        </field>
+    </record>
+
+    <record id="view_form_product_extend_with_brand_mpn" model="ir.ui.view">
+        <field name="name">Upware Brand</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_only_form_view" />
+        <field name="arch" type="xml">
+            <field name="default_code" position="after">
+                <field name="upware_mpn"/>
+                <field name="upware_brand_id"/>
+            </field>
+        </field>
+    </record>
+</odoo>
