@@ -1,0 +1,34 @@
+
+[nginx-odoo]
+enabled  = true
+port     = http,https
+filter   = nginx-odoo
+logpath  = /var/log/nginx/odoo.access.log
+maxretry = 6
+findtime = 600
+
+[nginx-req-limit] 
+enabled = true 
+filter = nginx-req-limit 
+action = iptables-multiport[name=ReqLimit, port="http,https", protocol=tcp] 
+logpath = /var/log/nginx/*error.log 
+findtime = 600 
+bantime = 7200 
+maxretry = 10 
+
+[nginx-conn-limit] 
+enabled = true 
+filter = nginx-conn-limit 
+action = iptables-multiport[name=ConnLimit, port="http,https", protocol=tcp] 
+logpath = /var/log/nginx/*error.log 
+findtime = 300 
+bantime = 7200 
+maxretry = 100
+
+[odoo-login]
+enabled = true
+port = http,https
+bantime = 900  ; 15 min ban
+maxretry = 10  ; if 10 attempts
+findtime = 60  ; within 1 min  /!\ Should be adjusted with the TZ offset
+logpath = [LOG PATH GOES HERE]  ;  set the actual odoo log path here
