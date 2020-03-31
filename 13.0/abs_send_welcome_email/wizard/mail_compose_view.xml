@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <!-- Form view for compose the welcome mail -->
+    <record id="view_mail_compose_form" model="ir.ui.view">
+        <field name="name">mail.compose.form</field>
+        <field name="model">mail.compose</field>
+        <field name="arch" type="xml">
+            <form string ="Welcome Email">
+                <group> 
+                    <field name="partner_ids" widget='many2many_tags_email'/>
+                    <field name="subject"/>
+                    <field name="description" widget='html'/>
+	        </group>
+	    	<footer>
+	            <button string='Send' name="send_email" type='object' class='btn-primary'>
+                     </button>
+		    <button string='Cancel' class='btn-default' special="cancel"/>	
+	    	</footer>
+	    </form>		
+        </field>
+    </record>
+
+    <!-- Action For Wizard Form-->
+    <record id="open_view_mail_compose_form_action" model="ir.actions.act_window">
+        <field name="name">Mail</field>
+        <field name="res_model">mail.compose</field>
+        <field name="view_mode">form</field>
+        <field name="target">new</field>
+        <field name="view_id" ref="view_mail_compose_form"/>	
+    </record>
+
+</odoo>
+  
+
+
+
+
+

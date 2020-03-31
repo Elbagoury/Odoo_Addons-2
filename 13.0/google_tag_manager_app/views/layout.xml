@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="backend_layout" name="Google Tag Manager" inherit_id="web.layout">
+        <xpath expr="//head" position="inside">
+            <script t-if="website and website.google_tag_manager_key and not editable">
+                (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+                new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+                j=d.createElement(s),dl=l!='dataLayer'?'&amp;l='+l:'';j.async=true;j.src=
+                'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+                })(window,document,'script','dataLayer','<t t-esc="website.google_tag_manager_key"/>');
+            </script>
+        </xpath>
+    </template>
+
+    <template id="frontend_layout" name="Google Tag Manager NoScript" inherit_id="website.layout">
+        <xpath expr="//div[@id='wrapwrap']" position="before">
+            <noscript t-if="website and website.google_tag_manager_key and not editable">
+                <iframe t-attf-src="https://www.googletagmanager.com/ns.html?id={{ website.google_tag_manager_key }}" height="0" width="0" style="display:none; visibility:hidden"></iframe>
+            </noscript>
+        </xpath>
+    </template>
+</odoo>
