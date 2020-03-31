@@ -1,0 +1,31 @@
+
+
+.pos .pos-receipt-container > div {
+    text-align: left;
+    width: 138.9px !important;
+    background-color: white;
+    margin: 20px;
+    padding: 2% 1%;
+    display: inline-block;
+    border: solid 1px rgb(220,220,220);
+    border-radius: 3px;
+    max-width: 138.9px !important;
+    overflow: hidden;
+    font-size: 10px !important;
+    color: #404040;
+}
+
+.pos-receipt .pos-receipt-amount {
+    font-size: 100%;
+    padding-left: 0em;
+}
+
+.pos-receipt .pos-receipt-contact {
+    text-align: center;
+    font-size: 9px;
+}
+
+.pos-receipt .pos-receipt-order-data {
+    text-align: center;
+    font-size: 9px;
+}

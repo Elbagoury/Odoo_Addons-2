@@ -1,0 +1,13 @@
+Version 13.0.0.1
+When create order without select customer , its generate error print reciept
+
+
+version 13.0.0.2
+	- payment_refer field not user , remove it.
+	- if pos order payment not pay by wallet , but its automatically generate debit wallet transaction.
+
+
+Version 13.0.0.3 : (03/03/20)
+		- Customization for hany baya
+		- Wallet Recharge from POS is now proceeded through order .
+		- change receipt size.
