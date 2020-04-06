@@ -1,0 +1,497 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* professional_templates_3jd
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 13.0+e-20200121\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-26 07:35+0000\n"
+"PO-Revision-Date: 2020-03-26 07:35+0000\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Plural-Forms: \n"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_4_document
+msgid "Date Ordered:"
+msgstr "Date de Commande"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.delivery_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.invoice_lines
+msgid "<i class=\"fa fa-barcode\"/> Serial Number"
+msgstr "<i class=\"fa fa-barcode\"/> Numéro de Série"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_8_document
+msgid "<strong style=\"white-space:nowrap;\">Salesperson:</strong>"
+msgstr "<strong style=\"white-space:nowrap;\">Vendeur:</strong>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_8_document
+msgid "<strong style=\"white-space:nowrap;\">Valid Until:</strong>"
+msgstr "<strong style=\"white-space:nowrap;\">Valide Jusqu'au:</strong>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_3_document
+msgid "Invoicing &amp; Shipping Address:"
+msgstr "Adresse de facturation &amp; d'expédition:"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_3_document
+msgid "Invoicing Address:"
+msgstr "Adresse de facturation:"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_4_document
+msgid "Order"
+msgstr "Commande"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_4_document
+msgid "Quotation"
+msgstr "Devis"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_11_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_4_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_8_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_9_document
+msgid "Quotation Date:"
+msgstr "Date de devis:"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_11_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_8_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_9_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_11_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_8_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_9_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_3_document
+msgid "Shipping Address:"
+msgstr "Adresse d'expédition:"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.DN_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.DN_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.DN_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.DN_4_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_11_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_4_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_8_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_9_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PICK_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PICK_11_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PICK_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PICK_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PICK_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PICK_4_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PICK_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PICK_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PICK_8_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PICK_9_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_11_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_4_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_8_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_9_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_11_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_4_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_8_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.RFQ_9_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_11_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_4_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_8_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_9_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.company_address
+#: model_terms:ir.ui.view,arch_db:professional_templates.company_address_noname
+msgid "VAT:"
+msgstr "TVA:"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_11_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_4_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_8_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_9_document
+msgid "<span>Pro-Forma Invoice # </span>"
+msgstr "<span>Facture Pro-Forma # </span>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_3_document
+msgid "<strong style=\"white-space:nowrap;\">Client Reference:</strong>"
+msgstr "<strong style=\"white-space:nowrap;\">Reference Client:</strong>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_0_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_4_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_8_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_4_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.PO_8_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_8_document
+msgid "<strong style=\"white-space:nowrap;\">Fiscal Position:</strong>"
+msgstr "<strong style=\"white-space:nowrap;\">Position Fiscale:</strong>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.invoice_lines_ascend
+#: model_terms:ir.ui.view,arch_db:professional_templates.order_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.order_lines_ascend
+msgid "Total Price"
+msgstr "Total"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.invoice_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.order_lines
+msgid "<i class=\"fa fa-minus-square\"/> Discount(%)"
+msgstr "<i class=\"fa fa-minus-square\"/> Remise(%)"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.invoice_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.order_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.picking_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.purchase_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.rfq_lines
+msgid '<i class=\"fa fa-sort-amount-asc\"/> Quantity'
+msgstr '<i class=\"fa fa-sort-amount-asc\"/> Qté'
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.invoice_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.order_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.purchase_lines
+msgid "<i class=\"fa fa-tags\"/> Unit Price"
+msgstr "<i class=\"fa fa-tags\"/> Prix.U"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.delivery_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.picking_lines
+msgid "<i class=\"fa fa-th-large\"/> Product"
+msgstr "<i class=\"fa fa-th-large\"/> Produit"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.invoice_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.invoice_lines_ascend
+#: model_terms:ir.ui.view,arch_db:professional_templates.order_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.order_lines_ascend
+msgid "<strong class=\"mr16\">Subtotal</strong>"
+msgstr "<strong class=\"mr16\">Sous-Total</strong>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.order_lines
+msgid "<strong>Amount Due</strong>"
+msgstr "<strong>Montant dû</strong>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.order_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.order_lines_ascend
+msgid "<strong>Shipping:</strong>"
+msgstr "<strong>Livraison:</strong>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.invoice_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.invoice_lines_ascend
+#: model_terms:ir.ui.view,arch_db:professional_templates.order_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.order_lines_ascend
+msgid "<strong>Subtotal</strong>"
+msgstr "<strong>Sous-Total</strong>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.invoice_lines_ascend
+#: model_terms:ir.ui.view,arch_db:professional_templates.order_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.order_lines_ascend
+msgid "Amount"
+msgstr "Total hors-taxe"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.invoice_lines
+msgid ""
+"<i class=\"fa fa-money\"/>\n"
+"                            <span groups=\"account.group_show_line_subtotals_tax_excluded\">Amount</span>\n"
+"                            <span groups=\"account.group_show_line_subtotals_tax_included\">Total Price</span>"
+msgstr ""
+"<i class=\"fa fa-money\"/>\n"
+"                            <span groups=\"account.group_show_line_subtotals_tax_excluded\">Montant</span>\n"
+"                            <span groups=\"account.group_show_line_subtotals_tax_included\">Total</span>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.invoice_lines
+msgid "Please use the following communication for your payment :"
+msgstr "Veuillez utiliser la communication suivante pour votre paiement :"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.delivery_lines
+msgid "<i class=\"fa fa-map-maker\"/> Location"
+msgstr "<i class=\"fa fa-map-maker\"/> Emplacement"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.delivery_lines
+msgid "<i class=\"fa fa-pencil\"/> Quantity"
+msgstr "<i class=\"fa fa-pencil\"/> Qté"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.delivery_lines_ascend
+msgid "Delivered Quantity"
+msgstr "Quantité Livré"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.delivery_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.purchase_lines_ascend
+msgid "Price"
+msgstr "Prix"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.delivery_lines
+msgid "Price Total"
+msgstr "Total"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.delivery_lines
+#: model_terms:ir.ui.view,arch_db:professional_templates.picking_lines
+msgid "<i class=\"fa fa-industry\"/> Brand"
+msgstr "<i class=\"fa fa-industry\"/> Marque"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.DN_4_document
+msgid "<span class=\"fa fa-truck\"/> Delivery address:"
+msgstr "<span class=\"fa fa-truck\"/> Adresse de Livraison:"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.DN_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.DN_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.DN_4_document
+msgid "<span>Delivery Note  </span>"
+msgstr "<span>Note de Livraison </span>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.DN_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.DN_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.DN_4_document
+msgid "<strong style=\"white-space:nowrap;\">Order (Origin):</strong>"
+msgstr "<strong style=\"white-space:nowrap;\">Commande:</strong>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.DN_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.DN_4_document
+msgid "<strong style=\"white-space:nowrap;\">Scheduled Date</strong>"
+msgstr "<strong style=\"white-space:nowrap;\">Date Prévisionnelle</strong>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_0_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_4_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_8_document
+msgid "<strong style=\"white-space:nowrap;\">Due Date:</strong>"
+msgstr "<strong style=\"white-space:nowrap;\">Date d'échéance:</strong>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_0_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_4_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_8_document
+msgid "<strong style=\"white-space:nowrap;\">Invoice Date:</strong>"
+msgstr "<strong style=\"white-space:nowrap;\">Date de facturation:</strong>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_0_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_10_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_4_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_6_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_7_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_8_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.SO_8_document
+msgid "<strong style=\"white-space:nowrap;\">Reference:</strong>"
+msgstr "<strong style=\"white-space:nowrap;\">Référence:</strong>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_0_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+msgid "<strong style=\"white-space:nowrap;\">Source Doc:</strong>"
+msgstr "<strong style=\"white-space:nowrap;\">Doc. Source:</strong>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_0_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_4_document
+msgid "Cancelled Invoice"
+msgstr "Facture annulée"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_0_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_13_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_14_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_4_document
+msgid "Draft Invoice"
+msgstr "Facture en devis"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_0_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_3_document
+msgid "Invoice#"
+msgstr "Facture#"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_0_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_4_document
+msgid "Supplier Invoice"
+msgstr "Facture fournisseur"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_0_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_4_document
+msgid "Supplier Refund"
+msgstr "Remboursement fournissuer"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+msgid "<span class=\"fa fa-user \"/> Invoicing Address"
+msgstr "<span class=\"fa fa-user \"/> Adresse de Facturation"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+msgid ""
+"<span class=\"fa fa-user \"/> Invoicing  &amp;  <span class=\"fa fa-truck "
+"\"/> Shipping Address"
+msgstr ""
+"<span class=\"fa fa-user \"/> Adresse de Facturation &amp;  <span class=\"fa fa-truck "
+"\"/> d'expédition"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+msgid "<span><span class=\"fa fa-truck \"/> Shipping Address</span>"
+msgstr "<span><span class=\"fa fa-truck \"/> Adresse d'expédition</span>"
+
+#. module: professional_templates_3jd
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_0_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_1_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_2_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_3_document
+#: model_terms:ir.ui.view,arch_db:professional_templates.INVOICE_4_document
+msgid "Refund"
+msgstr "Remboursement"

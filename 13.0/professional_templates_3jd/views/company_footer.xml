@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <template id="professional_templates.company_footer">
+            <t t-if="style.footer">
+                <t t-set="company" t-value="company.sudo()"/>
+                <t t-set="footer_style" t-value="'text-align:left;display:inline-block;width:auto;max-width:100%'"/>
+                <div class="col-12 text-center float-left" t-attf-style="background-color:transparent !important; color:{{style.text_color}};border-top: 1px solid black;padding-top:5px;padding-left:0px; padding-right:0px;">
+                    <t t-if="not company.report_footer">
+                        <div t-attf-style="#{footer_style}" class="mr16"> <!--Bank Details -->
+                        <ul style="padding: 0px;">
+                            <t t-foreach="company.bank_journal_ids" t-as="journal">
+                                <t t-if="journal.display_on_footer">
+                                    <t t-set="bank_acc" t-value="journal.bank_account_id"/>
+                                    <div>
+                                        <i class="fa fa-building"/>  
+                                        <span t-field="bank_acc.bank_name"/><t t-if="bank_acc.bank_bic"> (<span t-field="bank_acc.bank_bic"/>)</t>: <span t-field="bank_acc.acc_number"/>
+                                    </div>
+                                </t>
+                            </t>
+                            <div style="text-align:center"> <span t-field="company.name"/> <span t-field="company.street"/> - <span t-field="company.street2"/> <span t-field="company.zip"/> <span t-field="company.city"/><br />
+                            Tél. : +33 (0)5 49 46 06 90 - www.vrac-liquide.fr - contact@3jd.fr - Facebook @vracliquide <br />
+                            RCS de Poitiers <span t-field="company.company_registry"/> - SIRET <span t-field="company.siret"/> - APE <span t-field="company.ape"/> - TVA Intracommunautaire <span t-field="company.vat"/><br />
+                            IBAN : FR76 1551 9390 0800 0207 3690 129 - BIC : CMCIFR2A </div>
+                        </ul>
+                    </div>
+                        
+                    </t>
+                    <div t-if="company.report_footer" class="text-center"><span t-field="company.report_footer"/></div>
+                </div>
+            </t>
+            <div class="col-12 text-center text-muted">Page: <span class="page"/> / <span class="topage"/></div>
+        </template>
+    </data>
+</odoo>
