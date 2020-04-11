@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="order_delivery_duration" inherit_id="website.assets_frontend">
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/website_order_delivery_duration_drc/static/src/js/order_delivery_duration.js"></script>
+        </xpath>
+    </template>
+
+
+    <template id="website_order_delivery_duration" name="Delivery Time" inherit_id="website_sale.checkout">
+        <xpath expr="//a[@href='/shop/cart']" position="replace">    
+        </xpath>
+        
+        <xpath expr="//a[@href='/shop/confirm_order']" position="replace">
+            <form action="/shop/confirm_order" method="post">
+                <input type="hidden" name="csrf_token" t-att-value="request.csrf_token()"/>
+                <div class="col-md-12 oe_cart">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3 class="page-header mt16">
+                                <span class="fa fa-pencil"/>
+                                <span>Delivery Time &amp; Notes</span>
+                            </h3>
+                        </div>
+                    </div>
+                    <p class="ml16 mb32"> You can pick your specific delivery date if needed and drop a message for delivery &amp; you will have that message with product delivery.</p>
+                </div>
+                <div class="col-md-12 oe_cart mb8">
+                    <div class="col-md-6">
+                        <label class="control-label" for="date-label">Delivery Date</label>
+                        <input type="text" id="delivery_date" name="delivery_date" class="form-control"/>
+                    </div>
+                </div>
+                <div class="col-md-12 oe_cart mb32">
+                    <div class="col-md-12">
+                        <label class="control-label" for="message-label">Message</label>
+                        <textarea name="delivery_message" class="form-control"/>
+                    </div>
+                </div>
+                <a href="/shop/cart" class="btn btn-default mb32">
+                    <span class="fa fa-long-arrow-left" /> Return to Cart
+                </a>
+                <button class="btn btn-default btn-primary pull-right mb32">Confirm
+                    <span class="fa fa-long-arrow-right" />
+                </button>
+            </form>
+        </xpath>
+
+    </template>
+</odoo>
