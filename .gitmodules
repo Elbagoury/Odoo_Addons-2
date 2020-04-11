@@ -9,3 +9,9 @@
 	path = 13.0/SUBMODULES/CybroHRMS
 	url = https://github.com/CybroOdoo/OpenHRMS.git
 	branch = 13.0
+[submodule "click-odoo-contrib"]
+	path = TOOLS/odoo/click-odoo-contrib
+	url = https://github.com/acsone/click-odoo-contrib.git
+[submodule "click-odoo"]
+	path = TOOLS/odoo/click-odoo
+	url = https://github.com/acsone/click-odoo.git
