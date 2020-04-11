@@ -1,0 +1,3 @@
+[submodule "postgresqltuner"]
+	path = postgresqltuner
+	url = https://github.com/jfcoz/postgresqltuner.git
