@@ -195,3 +195,8 @@ table#ksListViewTable {
     padding-right: 10px;
 }
 
+
+.ks_date_filters_menu_drop_down {
+    max-height: 500px !important;
+    overflow: auto !important;
+}

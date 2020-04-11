@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <templates>
 
     <!--    Dashboard Header : Show title and dashboard settings button-->
@@ -53,7 +52,7 @@
                                         <span class="caret"/>
                                     </button>
 
-                                    <ul id="ks_date_selector_container" class="dropdown-menu ks_date_filters_menu dropdown-max-height"
+                                    <ul id="ks_date_selector_container" class="dropdown-menu ks_date_filters_menu_drop_down ks_dashboard_custom_srollbar ks_date_filters_menu dropdown-max-height"
                                         role="menu">
                                         <li id="l_none">
                                             <span class="df_selection_text">All Time</span>

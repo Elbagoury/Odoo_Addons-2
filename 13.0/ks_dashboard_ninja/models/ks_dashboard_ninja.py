@@ -48,6 +48,10 @@ class KsDashboardNinjaBoard(models.Model):
         ('l_month', 'Last 30 days'),
         ('l_quarter', 'Last 90 days'),
         ('l_year', 'Last 365 days'),
+        ('ls_past_until_now', 'Past Till Now'),
+        ('ls_pastwithout_now', ' Past Excluding Today'),
+        ('n_future_starting_now', 'Future Starting Now'),
+        ('n_futurestarting_tomorrow', 'Future Starting Tomorrow'),
         ('l_custom', 'Custom Filter'),
     ], default='l_none', string="Default Date Filter")
 
@@ -67,7 +71,8 @@ class KsDashboardNinjaBoard(models.Model):
         ('600000', '10 minute'),
     ], string="Default Update Interval", help="Update Interval for new items only")
     ks_dashboard_menu_sequence = fields.Integer(string="Menu Sequence", default=10,
-                                                help="Smallest sequence give high priority and Highest sequence give low priority")
+                                                help="Smallest sequence give high priority and Highest sequence give "
+                                                     "low priority")
 
     @api.model
     def create(self, vals):
@@ -106,7 +111,6 @@ class KsDashboardNinjaBoard(models.Model):
                 rec.ks_dashboard_start_date = False
                 rec.ks_dashboard_end_date = False
 
-
     def write(self, vals):
         if vals.get('ks_date_filter_selection', False) and vals.get('ks_date_filter_selection') != 'l_custom':
             vals.update({
@@ -142,7 +146,6 @@ class KsDashboardNinjaBoard(models.Model):
 
         return record
 
-
     def unlink(self):
         if self.env.ref('ks_dashboard_ninja.ks_my_default_dashboard_board').id in self.ids:
             raise ValidationError(_("Default Dashboard can't be deleted."))
@@ -175,23 +178,19 @@ class KsDashboardNinjaBoard(models.Model):
                 ks_dashboard_id).ks_date_filter_selection,
             'ks_gridstack_config': self.browse(ks_dashboard_id).ks_gridstack_config,
             'ks_set_interval': self.browse(ks_dashboard_id).ks_set_interval,
+            'ks_dashboard_items_ids': self.browse(ks_dashboard_id).ks_dashboard_items_ids.ids,
+            'ks_item_data': {}
         }
 
-        if len(self.browse(ks_dashboard_id).ks_dashboard_items_ids) < 1:
-            dashboard_data['ks_item_data'] = False
-        else:
-            if ks_item_domain:
-                try:
-                    items = self.ks_fetch_item(self.ks_dashboard_items_ids.search(
-                        [['ks_dashboard_ninja_board_id', '=', ks_dashboard_id]] + ks_item_domain).ids, ks_dashboard_id)
-                except Exception as e:
-                    items = self.ks_fetch_item(self.browse(ks_dashboard_id).ks_dashboard_items_ids.ids, ks_dashboard_id)
-                    dashboard_data['ks_item_data'] = items
-                    return dashboard_data
-            else:
-                items = self.ks_fetch_item(self.browse(ks_dashboard_id).ks_dashboard_items_ids.ids, ks_dashboard_id)
+        ks_item_domain = ks_item_domain or []
+        try:
+            items = self.ks_dashboard_items_ids.search(
+                [['ks_dashboard_ninja_board_id', '=', ks_dashboard_id]] + ks_item_domain).ids
+        except Exception as e:
+            items = self.ks_dashboard_items_ids.search(
+                [['ks_dashboard_ninja_board_id', '=', ks_dashboard_id]] + ks_item_domain).ids
+        dashboard_data['ks_dashboard_items_ids'] = items
 
-            dashboard_data['ks_item_data'] = items
         return dashboard_data
 
     @api.model
@@ -274,7 +273,8 @@ class KsDashboardNinjaBoard(models.Model):
             # 'action_id': rec.ks_actions.id if rec.ks_actions else False,
             'sequence': 0,
             'max_sequnce': len(rec.ks_action_lines) if rec.ks_action_lines else False,
-            'action': action
+            'action': action,
+            'ks_hide_legend': rec.ks_hide_legend,
         }
         return item
 
@@ -307,22 +307,7 @@ class KsDashboardNinjaBoard(models.Model):
         self = self.ks_set_date(dashboard_id)
         item = self.ks_dashboard_items_ids.browse(ks_dashboard_item_id)
 
-        return item.ks_get_next_offset(ks_dashboard_item_id,offset)
-
-
-    def load_previous_data(self):
-
-        for rec in self:
-            if rec.ks_dashboard_menu_id and rec.ks_dashboard_menu_id.action._table == 'ir_act_window':
-                action_id = {
-                    'name': rec['ks_dashboard_menu_name'] + " Action",
-                    'res_model': 'ks_dashboard_ninja.board',
-                    'tag': 'ks_dashboard_ninja',
-                    'params': {'ks_dashboard_id': rec.id},
-                }
-                rec.ks_dashboard_client_action_id = self.env['ir.actions.client'].sudo().create(action_id)
-                rec.ks_dashboard_menu_id.write(
-                    {'action': "ir.actions.client," + str(rec.ks_dashboard_client_action_id.id)})
+        return item.ks_get_next_offset(ks_dashboard_item_id, offset)
 
     def ks_view_items_view(self):
         self.ensure_one()
@@ -345,11 +330,12 @@ class KsDashboardNinjaBoard(models.Model):
 
         }
 
-    def ks_export_item(self,item_id):
+    def ks_export_item(self, item_id):
         return {
             'ks_file_format': 'ks_dashboard_ninja_item_export',
             'item': self.ks_export_item_data(self.ks_dashboard_items_ids.browse(int(item_id)))
         }
+
     # fetching Item info (Divided to make function inherit easily)
     def ks_export_item_data(self, rec):
         ks_chart_measure_field = []
@@ -425,11 +411,15 @@ class KsDashboardNinjaBoard(models.Model):
             'ks_standard_goal_value': rec.ks_standard_goal_value,
             'ks_goal_liness': ks_goal_lines,
             'ks_date_filter_selection': rec.ks_date_filter_selection,
-            'ks_item_start_date':rec.ks_item_start_date.strftime(DEFAULT_SERVER_DATETIME_FORMAT) if rec.ks_item_start_date else False,
-            'ks_item_end_date': rec.ks_item_end_date.strftime(DEFAULT_SERVER_DATETIME_FORMAT) if rec.ks_item_end_date else False,
+            'ks_item_start_date': rec.ks_item_start_date.strftime(
+                DEFAULT_SERVER_DATETIME_FORMAT) if rec.ks_item_start_date else False,
+            'ks_item_end_date': rec.ks_item_end_date.strftime(
+                DEFAULT_SERVER_DATETIME_FORMAT) if rec.ks_item_end_date else False,
             'ks_date_filter_selection_2': rec.ks_date_filter_selection_2,
-            'ks_item_start_date_2': rec.ks_item_start_date_2.strftime(DEFAULT_SERVER_DATETIME_FORMAT) if rec.ks_item_start_date_2 else False,
-            'ks_item_end_date_2': rec.ks_item_end_date_2.strftime(DEFAULT_SERVER_DATETIME_FORMAT) if rec.ks_item_end_date_2 else False,
+            'ks_item_start_date_2': rec.ks_item_start_date_2.strftime(
+                DEFAULT_SERVER_DATETIME_FORMAT) if rec.ks_item_start_date_2 else False,
+            'ks_item_end_date_2': rec.ks_item_end_date_2.strftime(
+                DEFAULT_SERVER_DATETIME_FORMAT) if rec.ks_item_end_date_2 else False,
             'ks_previous_period': rec.ks_previous_period,
             'ks_target_view': rec.ks_target_view,
             'ks_data_comparison': rec.ks_data_comparison,
@@ -448,6 +438,9 @@ class KsDashboardNinjaBoard(models.Model):
             'ks_list_target_deviation_field': rec.ks_list_target_deviation_field.name,
             'ks_unit': rec.ks_unit,
             'ks_show_records': rec.ks_show_records,
+            'ks_hide_legend': rec.ks_hide_legend,
+            'ks_fill_temporal': rec.ks_fill_temporal,
+            'ks_domain_extension': rec.ks_domain_extension,
             'ks_unit_selection': rec.ks_unit_selection,
             'ks_chart_unit': rec.ks_chart_unit,
             'ks_bar_chart_stacked': rec.ks_bar_chart_stacked,
@@ -456,13 +449,12 @@ class KsDashboardNinjaBoard(models.Model):
         }
         return item
 
-
     def ks_import_item(self, dashboard_id, **kwargs):
         try:
             # ks_dashboard_data = json.loads(file)
             file = kwargs.get('file', False)
             ks_dashboard_file_read = json.loads(file)
-        except:
+        except Exception:
             raise ValidationError(_("This file is not supported"))
 
         if 'ks_file_format' in ks_dashboard_file_read and ks_dashboard_file_read[
@@ -475,7 +467,6 @@ class KsDashboardNinjaBoard(models.Model):
         self.ks_create_item(item)
 
         return "Success"
-
 
     @api.model
     def ks_dashboard_export(self, ks_dashboard_ids):
@@ -515,7 +506,7 @@ class KsDashboardNinjaBoard(models.Model):
         try:
             # ks_dashboard_data = json.loads(file)
             ks_dashboard_file_read = json.loads(file)
-        except:
+        except Exception:
             raise ValidationError(_("This file is not supported"))
 
         if 'ks_file_format' in ks_dashboard_file_read and ks_dashboard_file_read[
@@ -594,13 +585,13 @@ class KsDashboardNinjaBoard(models.Model):
 
             if ks_skiped:
                 return {
-                    'ks_skiped_items' : ks_skiped,
+                    'ks_skiped_items': ks_skiped,
                 }
 
         return "Success"
         # separate function to make item for import
 
-    def ks_create_item(self,item):
+    def ks_create_item(self, item):
         model = self.env['ir.model'].search([('model', '=', item['ks_model_id'])])
 
         if not model:
@@ -608,8 +599,6 @@ class KsDashboardNinjaBoard(models.Model):
                 "Please Install the Module which contains the following Model : %s " % item['ks_model_id']))
 
         ks_model_name = item['ks_model_id']
-
-
 
         ks_goal_lines = item['ks_goal_liness'].copy() if item.get('ks_goal_liness', False) else False
         ks_action_lines = item['ks_action_liness'].copy() if item.get('ks_action_liness', False) else False
@@ -624,7 +613,6 @@ class KsDashboardNinjaBoard(models.Model):
         if 'ks_action_liness' in item:
             del item['ks_action_liness']
 
-      
         ks_item = self.env['ks_dashboard_ninja.item'].create(item)
 
         if ks_goal_lines and len(ks_goal_lines) != 0:
@@ -748,7 +736,7 @@ class KsDashboardNinjaBoard(models.Model):
 
         ks_model_id = self.env['ir.model'].search([('model', '=', item['ks_model_id'])]).id
 
-        if item["ks_actions"]:
+        if item.get("ks_actions"):
             ks_action = self.env.ref(item["ks_actions"], False)
             if ks_action:
                 item["ks_actions"] = ks_action.id
@@ -795,6 +783,7 @@ class KsDashboardNinjaBoard(models.Model):
             item['ks_item_end_date_2'] else False
 
         return item
+
 
 class KsDashboardNinjaTemplate(models.Model):
     _name = 'ks_dashboard_ninja.board_template'

@@ -13,7 +13,7 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
     var time = require('web.time');
     var datepicker = require("web.datepicker");
 
-
+    var session = require('web.session');
     var AbstractAction = require('web.AbstractAction');
     var ajax = require('web.ajax');
     var framework = require('web.framework');
@@ -42,6 +42,7 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
         ],
 
         init: function(parent, state, params) {
+//            css_grid = $('.o_rtl').length>0 ?
             this._super.apply(this, arguments);
             this.action_manager = parent;
             this.controllerID = params.controllerID;
@@ -88,12 +89,17 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
                 'l_month': _t('Last 30 days'),
                 'l_quarter': _t('Last 90 days'),
                 'l_year': _t('Last 365 days'),
+                'ls_past_until_now': _t('Past Till Now'),
+                'ls_pastwithout_now': _t('Past Excluding Today'),
+                'n_future_starting_now': _t('Future Starting Now'),
+                'n_futurestarting_tomorrow': _t('Future Starting Tomorrow'),
                 'l_custom': _t('Custom Filter'),
             };
             // To make sure date filter show date in specific order.
             this.ks_date_filter_selection_order = ['l_day', 't_week', 't_month', 't_quarter', 't_year', 'n_day',
                 'n_week', 'n_month', 'n_quarter', 'n_year', 'ls_day', 'ls_week', 'ls_month', 'ls_quarter',
-                'ls_year', 'l_week', 'l_month', 'l_quarter', 'l_year', 'l_custom'
+                'ls_year', 'l_week', 'l_month', 'l_quarter', 'l_year','ls_past_until_now', 'ls_pastwithout_now',
+                 'n_future_starting_now', 'n_futurestarting_tomorrow', 'l_custom'
             ];
 
             this.ks_dashboard_id = state.params.ks_dashboard_id;
@@ -132,12 +138,13 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
 
         on_attach_callback: function() {
             var self = this;
-            self.ksRenderDashboard();
-            self.ks_set_update_interval();
-            if (self.ks_dashboard_data.ks_item_data) {
-                self._ksSaveCurrentLayout();
-            }
-
+             $.when(self.ks_fetch_items_data()).then(function(result){
+                self.ksRenderDashboard();
+                self.ks_set_update_interval();
+                if (self.ks_dashboard_data.ks_item_data) {
+                    self._ksSaveCurrentLayout();
+                }
+            });
         },
 
         ks_set_update_interval: function() {
@@ -174,7 +181,7 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
             self.ksDateFilterSelection = false;
             self.ksDateFilterStartDate = false;
             self.ksDateFilterEndDate = false;
-            self.ks_fetch_data();
+//            self.ks_fetch_data();
         },
 
         ks_remove_update_interval: function() {
@@ -394,6 +401,22 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
             });
         },
 
+        ks_fetch_items_data: function(){
+            var self = this;
+            var items_promises = []
+            self.ks_dashboard_data.ks_dashboard_items_ids.forEach(function(value){
+                items_promises.push(self._rpc({
+                    model: "ks_dashboard_ninja.board",
+                    method: "ks_fetch_item",
+                    context: self.getContext(),
+                    args : [[value],self.ks_dashboard_id]
+                }).then(function(result){
+                    self.ks_dashboard_data.ks_item_data[value] = result[value];
+                }));
+            });
+
+            return Promise.all(items_promises)
+        },
 
         on_reverse_breadcrumb: function(state) {
             var self = this;
@@ -532,6 +555,9 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
 
             self.$el.append($ks_header);
             self.ksRenderDashboardMainContent();
+            if (Object.keys(self.ks_dashboard_data.ks_item_data).length === 0) {
+                self._ksRenderNoItemView();
+            }
         },
 
         ksRenderDashboardMainContent: function() {
@@ -908,36 +934,40 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
                     animation: {
                         easing: 'easeInQuad',
                     },
+                   legend: {
+                            display: item.ks_hide_legend
+                        },
                     scales: scales,
-                    layout: {
+                   layout: {
                         padding: {
-                            bottom: 0,
-                        }
-                    },
-                    plugins: {
-                        datalabels: {
-                            backgroundColor: function(context) {
-                                return context.dataset.backgroundColor;
-                            },
-                            borderRadius: 4,
-                            color: 'white',
-                            font: {
-                                weight: 'bold'
-                            },
-                            anchor: 'center',
-                            display: 'auto',
-                            clamp: true,
-                            formatter: function(value, ctx) {
-                                let sum = 0;
-                                let dataArr = ctx.dataset.data;
-                                dataArr.map(data => {
-                                    sum += data;
-                                });
-                                let percentage = sum === 0 ? 0 + "%" : (value * 100 / sum).toFixed(2) + "%";
-                                return percentage;
-                            },
+                        bottom: 0,
+                   }
+                },
+                plugins: {
+                    datalabels: {
+                        backgroundColor: function(context) {
+                            return context.dataset.backgroundColor;
+                        },
+                        borderRadius: 4,
+                        color: 'white',
+                        font: {
+                            weight: 'bold'
+                        },
+                        anchor: 'right',
+                        textAlign: 'center',
+                        display: 'auto',
+                        clamp: true,
+                        formatter: function(value, ctx) {
+                            let sum = 0;
+                            let dataArr = ctx.dataset.data;
+                            dataArr.map(data => {
+                                sum += data;
+                            });
+                            let percentage = sum === 0 ? 0 + "%" : (value * 100 / sum).toFixed(2) + "%";
+                            return percentage;
                         },
                     },
+                },
 
                 }
             });
@@ -1665,7 +1695,10 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
                     if (result === "Success") {
 
                         $.when(self.ks_fetch_data()).then(function() {
-                            self.ksRenderDashboard();
+                            $.when(self.ks_fetch_items_data()).then(function(result){
+                                self.ksRenderDashboard();
+                            });
+
                             framework.unblockUI();
                         });
                     }
@@ -1722,8 +1755,10 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
             var self = this;
             //        render page again
             $.when(self.ks_fetch_data()).then(function() {
-                self.ksRenderDashboard();
-                self.ks_set_update_interval();
+                $.when(self.ks_fetch_items_data()).then(function(result){
+                    self.ksRenderDashboard();
+                    self.ks_set_update_interval();
+                });
             });
         },
 
@@ -2200,10 +2235,10 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
                     _t("Item Duplicated"),
                     _t('Selected item is duplicated to ' + dashboard_name + ' .')
                 );
-                $.when(self.ks_fetch_data()).then(function() {
-                    self.ks_remove_update_interval();
-                    self.ksRenderDashboard();
-                    self.ks_set_update_interval();
+                $.when(self.ks_fetch_data()).then(function () {
+                    self.ks_fetch_items_data().then(function (){
+                        self.ksRenderDashboard();
+                    });
                 });
             })
         },
@@ -2277,9 +2312,11 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
                     _t('Selected item is moved to ' + dashboard_name + ' .')
                 );
                 $.when(self.ks_fetch_data()).then(function() {
-                    self.ks_remove_update_interval();
-                    self.ksRenderDashboard();
-                    self.ks_set_update_interval();
+                    $.when(self.ks_fetch_items_data()).then(function(){
+                        self.ks_remove_update_interval();
+                        self.ksRenderDashboard();
+                        self.ks_set_update_interval();
+                    });
                 });
             });
         },
@@ -2307,9 +2344,9 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
             self.ksDateFilterStartDate = false;
             self.ksDateFilterEndDate = false;
 
-            $.when(self.ks_fetch_data()).then(function() {
+            $.when(self.ks_fetch_items_data()).then(function () {
                 self.ksRenderDashboard();
-            });
+           });
         },
 
 
@@ -2347,7 +2384,6 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
 
         _onKsApplyDateFilter: function(e) {
             var self = this;
-            time
             var start_date = self.ksStartDatePickerWidget.getValue();
             var end_date = self.ksEndDatePickerWidget.getValue();
             if (start_date === "Invalid date") {
@@ -2358,7 +2394,7 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
 
                 self.ksDateFilterSelection = self.$el.find('.ks_date_filter_selected').attr('id');
 
-                $.when(self.ks_fetch_data()).then(function() {
+                self.ks_fetch_items_data().then(function(result){
                     self.ksUpdateDashboardItem(Object.keys(self.ks_dashboard_data.ks_item_data));
                 });
             } else {
@@ -2369,8 +2405,10 @@ odoo.define('ks_dashboard_ninja.ks_dashboard', function(require) {
                         self.ksDateFilterStartDate = start_date.add(-this.getSession().getTZOffset(start_date), 'minutes');
                         self.ksDateFilterEndDate = end_date.add(-this.getSession().getTZOffset(start_date), 'minutes');
 
-                        $.when(self.ks_fetch_data()).then(function() {
-                            self.ksRenderDashboard();
+                        self.ks_fetch_items_data().then(function(result){
+                            self.ksUpdateDashboardItem(Object.keys(self.ks_dashboard_data.ks_item_data));
+                            self.$el.find(".apply-dashboard-date-filter").addClass("ks_hide");
+                            self.$el.find(".clear-dashboard-date-filter").addClass("ks_hide");
                         });
 
                     } else {

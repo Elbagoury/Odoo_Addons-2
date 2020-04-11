@@ -203,7 +203,9 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function(requi
                     animation: {
                         easing: 'easeInQuad',
                     },
-
+                    legend: {
+                            display: this.recordData.ks_hide_legend
+                        },
                     layout: {
                         padding: {
                             bottom: 0,
@@ -221,6 +223,7 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function(requi
                                 weight: 'bold'
                             },
                             anchor: 'center',
+                            textAlign: 'center',
                             display: 'auto',
                             clamp: true,
                             formatter: function(value, ctx) {
@@ -362,7 +365,6 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function(requi
                 }
 
                 options = this.ksHideFunction(options, this.recordData, ksChartFamily, chartType);
-
                 options.plugins.datalabels.align = 'center';
                 options.plugins.datalabels.anchor = 'end';
                 options.plugins.datalabels.borderColor = 'white';
@@ -370,7 +372,6 @@ odoo.define('ks_dashboard_ninja_list.ks_dashboard_graph_preview', function(requi
                 options.plugins.datalabels.borderWidth = 2;
                 options.plugins.datalabels.clamp = true;
                 options.plugins.datalabels.clip = false;
-
                 options.tooltips.callbacks = {
                     title: function(tooltipItem, data) {
                         var ks_self = self;
