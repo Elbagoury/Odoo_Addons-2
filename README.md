@@ -1,8 +1,8 @@
 # Odoo Addons
 
 ## 13.0
-Quickbooks Desktop 
-Quickbooks Online
+* Quickbooks Desktop 
+* Quickbooks Online
 
 ## 12.0
 
