@@ -1,3 +1,11 @@
 [submodule "postgresqltuner"]
 	path = TOOLS/postgresql/postgresqltuner
 	url = https://github.com/jfcoz/postgresqltuner.git
+[submodule "CybroAddons"]
+	path = 13.0/SUBMODULES/CybrosysAddons
+	url = https://github.com/CybroOdoo/CybroAddons.git
+	branch = 13.0
+[submodule "CybroHRMS"]
+	path = 13.0/SUBMODULES/CybroHRMS
+	url = https://github.com/CybroOdoo/OpenHRMS.git
+	branch = 13.0
