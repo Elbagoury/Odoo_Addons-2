@@ -24,7 +24,23 @@
                                               <h2 class="sct-title">Ready To Use Demo</h2>
                                             </div>
                                         </div>
-                                        <div class="row sct-btm-row">
+                                        <div class="row sct-btm-row justify-content-center">
+                                          <div class="col-md-3 col-sm-6 sct-thumb">
+                                                <a href="/furniture-store" title="Furniture Store">
+                                                    <img src="/theme_scita/static/src/img/leading/demo-v13-furniture.jpg" class="img img-fluid" alt="Furniture Store Demo"/>
+                                                </a>
+                                                <h3 class="sct-sub-title">
+                                                    <a href="/furniture-store">Furniture Store</a>
+                                                </h3>
+                                          </div>
+                                          <div class="col-md-3 col-sm-6 sct-thumb">
+                                                <a href="/retail-store" title="Retail Store">
+                                                    <img src="/theme_scita/static/src/img/leading/demo-v13-aio.jpg" class="img img-fluid" alt="Retail Store Demo"/>
+                                                </a>
+                                                <h3 class="sct-sub-title">
+                                                    <a href="/retail-store">Retail Store</a>
+                                                </h3>
+                                          </div>
                                         	<div class="col-md-3 col-sm-6 sct-thumb">
                                                 <a href="/printing-media" title="Printing Media">
                                                     <img src="/theme_scita/static/src/img/leading/demo-printmedia.jpg" class="img img-fluid" alt="Printing Media Demo"/>
@@ -16306,6 +16322,448 @@
                   </t>
             </field>
         </record>
+
+        <record id="Home_Option_37_view" model="ir.ui.view">
+            <field name="name">Furniture Store</field>
+            <field name="type">qweb</field>
+            <field name="key">website.furniture</field>
+            <field name="mode">primary</field>
+            <field name="active">True</field>
+            <field name="arch" type="xml">
+                <t t-name="website.furniture-store">
+                    <t t-call="website.layout">
+                        <div class="oe_structure oe_empty" id="wrap">
+                            <section class="dynamic_video_banner" data-video-url="http://theme-scita-v13.appjetty.com/theme_scita/static/src/img/furniture-video.mp4" data-disp="banner" data-name="Dynamic Video Banner 1">
+                              <div class="container">
+                                <div class="block-title">
+                                  <h3 class="fancy">Video Banner</h3>
+                                </div>
+                              </div>
+                            </section>
+                            <section class="health_about_hospital" data-disp="about_us" data-name="About Us Snippet 2">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="col-md-6 sct_hospital_img">
+                                    <a href="/deals-of-the-day">
+                                      <img src="/theme_scita/static/src/img/scita_demo_img/furniture-store/adv-4.jpg" class="img img-fluid" alt="About Hospital" data-original-title="" title="" aria-describedby="tooltip581744"/>
+                                    </a>
+                                  </div>
+                                  <div class="col-md-6 sct_hospital_img">
+                                    <a href="/deals-of-the-day">
+                                      <img src="/theme_scita/static/src/img/scita_demo_img/furniture-store/adv-1.jpg" class="img img-fluid" alt="About Hospital" data-original-title="" title="" aria-describedby="tooltip581744"/>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                            <section class="deal_of_day_banner_5 pt0 pb16" data-disp="deal_days" data-name="Deal of the Day Snippet 5">
+                              <div class="container">
+                                <div class="row deals_day">
+                                  <div class="col-md-6 sct_img_box">
+                                    <a href="/shop">
+                                      <img src="/theme_scita/static/src/img/scita_demo_img/furniture-store/offer-1.jpg" class="img img-fluid" alt="For Men Offer" data-original-title="" title="" aria-describedby="tooltip685179"/>
+                                    </a>
+                                  </div>
+                                  <div class="col-md-6 sct_content_box">
+                                    <div class="sct_text_content">
+                                      <h2 class="sct_title o_default_snippet_text">Deal of the day</h2>
+                                    </div>
+                                    <div class="timer_counter_div">
+                                      <div class="js_counter_timer" data-date="Mar 12,2021 0:0:0" data-msg="Sale is expired" data-mins-1="" data-disp="deal_days" data-name="Timer">
+                                        <div class="counter_timer_div">
+                                          <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center">
+                                            <div class="box_degit">
+                                              <span id="days" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">367</span>
+                                              <span id="day_lbl" class="d-block">DAYS</span>
+                                            </div>
+                                          </span>
+                                          <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center">
+                                            <div class="box_degit">
+                                              <span id="hours" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">07</span>
+                                              <span id="h_lbl" class="d-block">HOURS</span>
+                                            </div>
+                                          </span>
+                                          <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center">
+                                            <div class="box_degit">
+                                              <span id="minutes" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">40</span>
+                                              <span id="m_lbl" class=" d-block">MINS</span>
+                                            </div>
+                                          </span>
+                                          <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center">
+                                            <div class="box_degit">
+                                              <span id="seconds" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">30</span>
+                                              <span id="s_lbl" class="d-block">SECS</span>
+                                            </div>
+                                          </span>
+                                        </div>
+                                      </div>
+                                    </div>
+                                    <div class="sct_button">
+                                      <a href="/deals-of-the-day" class="btn btn-primary" data-original-title="" title="" aria-describedby="tooltip179075">Shop Now</a>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                            <section class="it_about_cmp pt0 bg-white pb0" style="" data-disp="about_us" data-name="About Us Snippet 1">
+                              <div class="container">
+                                <div class="row sct_top_row">
+                                  <div class="col-md-12">
+                                    <h2 class="sct_title" style="margin-bottom: 0px;">Customize your Furniture <br/></h2>
+                                    <p class="sct_simple_text">We have a team of quality designers and artists, they will make or customize your home furniture with latest design and standard material.<br/></p>
+                                  </div>
+                                </div>
+                                <div class="row sct_btm_row">
+                                  <div class="col-md-6 sct_cmp_info">
+                                    <p class="sct_simple_text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.</p>
+                                    <div class="sct_cst_btn">
+                                      <a href="/contact-us-3" class="it_btn scita_cstm_btn btn btn-primary" data-original-title="" title="" aria-describedby="tooltip759606">Contact Us</a>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6 sct_cmp_img">
+                                    <img src="/theme_scita/static/src/img/scita_demo_img/furniture-store/customize-1.jpg" class="img img-fluid" alt="About Company" data-original-title="" title="" aria-describedby="tooltip760996"/>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                            <section class="s_text_image pt0 pb0" data-name="Text - Image">
+                              <div class="container">
+                                <div class="row align-items-center">
+                                  <div class="pt16 col-lg-12 pb0">
+                                    <a href="/shop">
+                                      <img src="/theme_scita/static/src/img/scita_demo_img/furniture-store/add-banner.jpg" class="img img-fluid mx-auto" alt="Odoo • Text and Image" data-original-title="" title="" aria-describedby="tooltip574941"/>
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                            <section class="it_sign_up_newsletter pb0" data-disp="newsletter" data-name="Newsletter Snippet 1">
+                              <div class="container">
+                                <div class="row sct_top_row">
+                                  <div class="col-md-12">
+                                    <h2 class="section-title style1" style="text-align: center;">Subscribe for latest updates</h2>
+                                  </div>
+                                </div>
+                                <div class="row sct_btm_row">
+                                  <div class="col-md-12">
+                                    <div class="input-group js_subscribe d-none" data-list-id="1">
+                                      <p class="sct_simple_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempo. Enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipisicing elit,</p>
+                                      <div class="newsletter_box">
+                                        <input class="popup_subscribe_email js_subscribe_email form-control" placeholder="Enter Your Email..." type="email"/>
+                                        <span class="input-group-btn">
+                                          <a class="btn btn-primary scita_cstm_btn js_subscribe_btn it_btn" href="#" data-original-title="" title="" aria-describedby="tooltip32658">Submit</a>
+                                          <a class="btn btn-success js_subscribed_btn o_hidden o_default_snippet_text d-none" disabled="disabled" href="#">Thanks</a>
+                                        </span>
+                                        <div class="alert alert-success o_hidden o_default_snippet_text">Thanks for your subscription!</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                            <section class="retial_trust_snippet_1" data-disp="trust_icon" data-name="Trust Icons Snippet 1">
+                              <div class="container">
+                                <div class="row">
+                                  <div class="col-md-4 col-sm-6">
+                                    <div class="sct-left-side">
+                                      <img src="/theme_scita/static/src/img/free-shipping-icon.png" class="img img-fluid" alt="Free Shipping"/>
+                                    </div>
+                                    <div class="sct-right-side">
+                                      <h4 class="o_default_snippet_text">FREE SHIPPING, RETURN</h4>
+                                      <p class="o_default_snippet_text">Free Shipping On All US Orders</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4 col-sm-6">
+                                    <div class="sct-left-side">
+                                      <img src="/theme_scita/static/src/img/secure-payment.png" class="img img-fluid" alt="Secure Payment"/>
+                                    </div>
+                                    <div class="sct-right-side">
+                                      <h4 class="o_default_snippet_text">SECURE PAYMENTS</h4>
+                                      <p class="o_default_snippet_text">All Payment Are Secured.</p>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-4 col-sm-6">
+                                    <div class="sct-left-side">
+                                      <img src="/theme_scita/static/src/img/money-back.png" class="img img-fluid" alt="Money back"/>
+                                    </div>
+                                    <div class="sct-right-side">
+                                      <h4 class="o_default_snippet_text">MONEY BACK GUARANTEE</h4>
+                                      <p class="o_default_snippet_text">30 Days Money Back Guarantee</p>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </section>
+                        </div>
+                      </t>
+                  </t>
+            </field>
+        </record>
+
+        <record id="Home_Option_38_view" model="ir.ui.view">
+            <field name="name">Retail Store</field>
+            <field name="type">qweb</field>
+            <field name="key">website.retail</field>
+            <field name="mode">primary</field>
+            <field name="active">True</field>
+            <field name="arch" type="xml">
+                <t t-name="website.retail-store">
+                    <t t-call="website.layout">
+                        <div class="oe_structure oe_empty" id="wrap">
+                            <div id="myCarousel1582606036283" class="s_carousel sct_banner_3 carousel pointer-event slide s_carousel_default" data-interval="10000" data-disp="banner" data-name="Banner Slider 3">
+                                <div class="carousel-inner">
+                                  <div class="carousel-item oe_img_bg pt96 pb96 oe_custom_bg active" style="background-image: url(&quot;http://195.201.103.191:8686/web/image/1298/background_banners-4.jpg&quot;);" data-name="Slide">
+                                    <div class="container">
+                                      <div class="row content sct_content_right">
+                                        <div class="col-md-12">
+                                          <div class="carousel-content">
+                                            <div class="sct_title">
+                                              <h2 class="banner-title">latest fashion trends</h2>
+                                            </div>
+                                            <div class="sct_sub_title">
+                                              <p>Hats summer panama sun jazz cap</p>
+                                            </div>
+                                            <div class="sct_text_btn">
+                                              <a href="/shop/category/apparel-61" class="btn">Shop Now</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="carousel-item oe_img_bg sct_right_img pt96 pb96 oe_custom_bg" style="background-image: url(&quot;http://195.201.103.191:8686/web/image/1299/background_banner-2.jpg&quot;);" data-name="Slide">
+                                    <div class="container">
+                                      <div class="row content sct_content_left">
+                                        <div class="col-md-12">
+                                          <div class="carousel-content">
+                                            <div class="sct_title">
+                                              <h2 class="banner-title">modern furniture</h2>
+                                            </div>
+                                            <div class="sct_sub_title">
+                                              <p>Modern Living Room Collections</p>
+                                            </div>
+                                            <div class="sct_text_btn">
+                                              <a href="/shop/category/furniture-60" class="btn o_default_snippet_text">Shop Now</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <div class="carousel-item oe_img_bg pt96 pb96 oe_custom_bg" style="background-image: url(&quot;http://195.201.103.191:8686/web/image/1300/background_banner-3.jpg&quot;);" data-name="Slide">
+                                    <div class="container">
+                                      <div class="row content sct_content_right">
+                                        <div class="col-md-12">
+                                          <div class="carousel-content">
+                                            <div class="sct_title">
+                                              <h2 class="banner-title">latest arrival</h2>
+                                            </div>
+                                            <div class="sct_sub_title">
+                                              <p>VR gamezone at your home</p>
+                                            </div>
+                                            <div class="sct_text_btn">
+                                              <a href="/shop/category/electronics-58" class="btn o_default_snippet_text">Shop Now</a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="carousel-control-prev" data-target="#myCarousel1582606036283" data-slide="prev" role="img" aria-label="Previous" title="Previous">
+                                  <span class="carousel-control-prev-icon"/>
+                                  <span class="sr-only o_default_snippet_text">Previous</span>
+                                </div>
+                                <div class="carousel-control-next" data-target="#myCarousel1582606036283" data-slide="next" role="img" aria-label="Next" title="Next">
+                                  <span class="carousel-control-next-icon"/>
+                                  <span class="sr-only o_default_snippet_text">Next</span>
+                                </div>
+                            </div>
+                            <section class="retial_deal_of_day_banner_snippet_1 pt24" data-disp="deal_days" data-name="Deal of the Day Snippet 1">
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-md-12 sct_promo_banner">
+                                    <section>
+                                        <div class="sct-left-side">
+                                          <img src="/theme_scita/static/src/img/scita_demo_img/retail-store/d-1.jpg" class="img img-fluid mx-auto" alt="For Men Offer"/>
+                                          <div class="deal_content">
+                                            <div class="sct_title">
+                                              <h1 class="title_banner">Deals of the day</h1>
+                                            </div>
+                                            <div class="sct_sub_title">
+                                              <p class="sub_title_banner o_default_snippet_text">Hurry Up! Offer end in</p>
+                                            </div>
+                                            <div class="timer_counter_div">
+                                              <div class="js_counter_timer" data-date="Jun 28,2020 0:0:0" data-msg="Sale is expired" data-mins-1="" data-disp="deal_days" data-name="Timer">
+                                                <div class="counter_timer_div">
+                                                  <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center">
+                                                    <div class="box_degit">
+                                                      <span id="days" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">107</span>
+                                                      <span id="day_lbl" class="d-block">DAYS</span>
+                                                    </div>
+                                                  </span>
+                                                  <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center">
+                                                    <div class="box_degit">
+                                                      <span id="hours" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">12</span>
+                                                      <span id="h_lbl" class="d-block">HOURS</span>
+                                                    </div>
+                                                  </span>
+                                                  <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center">
+                                                    <div class="box_degit">
+                                                      <span id="minutes" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">15</span>
+                                                      <span id="m_lbl" class=" d-block">MINS</span>
+                                                    </div>
+                                                  </span>
+                                                  <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center">
+                                                    <div class="box_degit">
+                                                      <span id="seconds" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">31</span>
+                                                      <span id="s_lbl" class="d-block">SECS</span>
+                                                    </div>
+                                                  </span>
+                                                </div>
+                                              </div>
+                                            </div>
+                                            <div class="sct_deal_btn">
+                                              <a href="/deals-of-the-day" class="btn" data-original-title="" title="" aria-describedby="tooltip287126">All Products <span class="ti-arrow-right" data-original-title="" title="" aria-describedby="tooltip331836"/></a>
+                                            </div>
+                                          </div>
+                                        </div>
+                                    </section>
+                                      <div class="sct_right_img">
+                                        <div class="offer-img">
+                                          <a href="/shop/category/flower-bouquet-57">
+                                            <img src="/theme_scita/static/src/img/scita_demo_img/retail-store/d-3.jpg" class="img img-fluid mx-auto" alt="For Men Offer" data-original-title="" title="" aria-describedby="tooltip763914"/>
+                                          </a>
+                                          <a href="/shop/category/electronics-58">
+                                            <img src="/theme_scita/static/src/img/scita_demo_img/retail-store/deal-offer-2.png" class="img img-fluid mx-auto" alt="For Offer" data-original-title="" title="" aria-describedby="tooltip447127"/>
+                                          </a>
+                                          <a href="/shop/category/men-s-fashion-59">
+                                            <img src="/theme_scita/static/src/img/scita_demo_img/retail-store/mens-fashion.png" class="img img-fluid mx-auto" alt="For Women Offer" data-original-title="" title="" aria-describedby="tooltip193547"/>
+                                          </a>
+                                        </div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <section class="sct_banner_snippet" data-disp="banner" data-name="Hero Image Snippet">
+                                <div class="container-fluid">
+                                  <div class="row">
+                                    <div class="col-md-12 sct_hero_banner text-center p-0">
+                                      <a href="/deals-of-the-day">
+                                        <img src="/theme_scita/static/src/img/scita_demo_img/retail-store/add-banner.jpg/add-banner.jpg" class="img img-fluid" data-original-title="" title="" aria-describedby="tooltip170226"/>
+                                      </a>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <section class="deal_of_day_banner_5 pt0 pb16" data-disp="deal_days" data-name="Deal of the Day Snippet 5">
+                                <div class="container">
+                                  <div class="row deals_day">
+                                    <div class="col-md-6 sct_img_box">
+                                      <a href="/shop/product/headphone-96">
+                                        <img src="/theme_scita/static/src/img/scita_demo_img/retail-store/of-2.jpg" class="img img-fluid" alt="For Men Offer" data-original-title="" title="" aria-describedby="tooltip867437"/>
+                                      </a>
+                                    </div>
+                                    <div class="col-md-6 sct_content_box">
+                                      <div class="sct_text_content">
+                                        <h2 class="sct_title o_default_snippet_text">Deal of the day</h2>
+                                      </div>
+                                      <div class="timer_counter_div">
+                                        <div class="js_counter_timer" data-date="May 17,2020 0:0:0" data-msg="Sale is expired" data-mins-1="" data-disp="deal_days" data-name="Timer">
+                                          <div class="counter_timer_div">
+                                            <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center">
+                                              <div class="box_degit">
+                                                <span id="days" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">65</span>
+                                                <span id="day_lbl" class="d-block">DAYS</span>
+                                              </div>
+                                            </span>
+                                            <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center">
+                                              <div class="box_degit">
+                                                <span id="hours" class="d-count  t_days_hr_min_sec_digit o_default_snippet_text">12</span>
+                                                <span id="h_lbl" class="d-block">HOURS</span>
+                                              </div>
+                                            </span>
+                                            <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center">
+                                              <div class="box_degit">
+                                                <span id="minutes" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">15</span>
+                                                <span id="m_lbl" class=" d-block">MINS</span>
+                                              </div>
+                                            </span>
+                                            <span class="col-lg-3 col-md-3 col-sm-3 col-3 text-center">
+                                              <div class="box_degit">
+                                                <span id="seconds" class="d-count t_days_hr_min_sec_digit o_default_snippet_text">31</span>
+                                                <span id="s_lbl" class="d-block">SECS</span>
+                                              </div>
+                                            </span>
+                                          </div>
+                                        </div>
+                                      </div>
+                                      <div class="sct_button">
+                                        <a href="/shop/product/headphone-96" class="btn btn-primary" data-original-title="" title="" aria-describedby="tooltip219119">Shop Now</a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <section class="container s_text_block_image_fw oe_img_bg oe_custom_bg retial_newsletter1 sign-up-container" style="background-image: url(/theme_scita/static/src/img/retail/nl-bg.jpg);" data-disp="newsletter" data-name="Newsletter Snippet 2">
+                                <div class="row">
+                                  <div class="col-md-12">
+                                    <div class="newsletter_title">
+                                      <h2 class="section-title o_default_snippet_text">Newsletter</h2>
+                                      <p>Subscribe now to get 15% off on any product and get our latest update in your email</p>
+                                    </div>
+                                    <div class="input-group js_subscribe" data-list-id="1">
+                                    <div class="newsletter_box">
+                                        <input class="popup_subscribe_email js_subscribe_email form-control" name="email" placeholder="Enter Your Email Address" type="email"/>
+                                        <span class="input-group-btn">
+                                          <a class="btn js_subscribe_btn o_default_snippet_text" href="#">Submit</a>
+                                          <a class="btn btn-success js_subscribed_btn o_hidden o_default_snippet_text d-none" disabled="disabled" href="#">Thanks</a>
+                                        </span>
+                                        <div class="alert alert-success o_hidden o_default_snippet_text">Thanks for your subscription!</div>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                            <section class="retial_trust_snippet_1" data-disp="trust_icon" data-name="Trust Icons Snippet 1">
+                                <div class="container">
+                                  <div class="row">
+                                    <div class="col-md-4 col-sm-6">
+                                      <div class="sct-left-side">
+                                        <img src="/theme_scita/static/src/img/free-shipping-icon.png" class="img img-fluid" alt="Free Shipping"/>
+                                      </div>
+                                      <div class="sct-right-side">
+                                        <h4 class="o_default_snippet_text">FREE SHIPPING, RETURN</h4>
+                                        <p class="o_default_snippet_text">Free Shipping On All US Orders</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                      <div class="sct-left-side">
+                                        <img src="/theme_scita/static/src/img/secure-payment.png" class="img img-fluid" alt="Secure Payment"/>
+                                      </div>
+                                      <div class="sct-right-side">
+                                        <h4 class="o_default_snippet_text">SECURE PAYMENTS</h4>
+                                        <p class="o_default_snippet_text">All Payment Are Secured.</p>
+                                      </div>
+                                    </div>
+                                    <div class="col-md-4 col-sm-6">
+                                      <div class="sct-left-side">
+                                        <img src="/theme_scita/static/src/img/money-back.png" class="img img-fluid" alt="Money back"/>
+                                      </div>
+                                      <div class="sct-right-side">
+                                        <h4 class="o_default_snippet_text">MONEY BACK GUARANTEE</h4>
+                                        <p class="o_default_snippet_text">30 Days Money Back Guarantee</p>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                            </section>
+                        </div>
+                      </t>
+                  </t>
+            </field>
+        </record>
         <!-- end home page data -->
         <record id="home_option_1_demo_page" model="website.page">
             <field name="name">Fashion</field>
@@ -16590,6 +17048,20 @@
             <field name="name">Printing Media</field>
             <field name="url">/printing-media</field>
             <field name="view_id" ref="theme_scita.Home_Option_36_view"/>
+            <field name="website_indexed">True</field>
+            <field name="website_published">True</field>
+        </record>
+        <record id="home_option_37_demo_page" model="website.page">
+            <field name="name">Furniture Store</field>
+            <field name="url">/furniture-store</field>
+            <field name="view_id" ref="theme_scita.Home_Option_37_view"/>
+            <field name="website_indexed">True</field>
+            <field name="website_published">True</field>
+        </record>
+        <record id="home_option_38_demo_page" model="website.page">
+            <field name="name">Retail Store</field>
+            <field name="url">/retail-store</field>
+            <field name="view_id" ref="theme_scita.Home_Option_38_view"/>
             <field name="website_indexed">True</field>
             <field name="website_published">True</field>
         </record>

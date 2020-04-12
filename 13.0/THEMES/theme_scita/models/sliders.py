@@ -46,7 +46,7 @@ class CategorySlider(models.Model):
 
 class MultiSlider(models.Model):
     _name = 'multi.slider.config'
-    _description = "Configration of Multi slider"
+    _description = "Configuration of Multi slider"
 
     name = fields.Char(string="Slider name", default='Trending',
                        required=True, translate=True,
@@ -117,3 +117,54 @@ class HrEmployee(models.Model):
         string="Linkedin account", default="https://www.linkedin.com/company/odoo")
     emp_description = fields.Text(
         string="Short description about employee", translate=True)
+
+
+class BrandSnippetConfiguration(models.Model):
+    _name = 'brand.snippet.config'
+    _description = " Brand Snippet Configuration"
+
+    name = fields.Char(string="Name", default='Trending brand', required=True, translate=True,
+                       help="Title to be displayed on website like Latest and etc...")
+    active = fields.Boolean(string="Active", default=True, required=True)
+    collections_brands = fields.Many2many('product.brands', 'product_brands_slider_rel',
+                                          'brand_id', 'slider_id', string="Collections of Brand", required=True)
+
+
+class ProductCategorySlider(models.Model):
+    _name = 'product.category.img.slider.config'
+    _description = 'product category image Slider'
+
+    name = fields.Char(string="Slider name", default='Trend',
+                       help="""Slider title to be displayed""",
+                       required=True, translate=True)
+    img_banner = fields.Binary(string="Image banner",
+                               help="""Image banner""")
+    img_link = fields.Char(string="Image Url", default='#',
+                           help="""Image Url""")
+    links = fields.Text(string="Links",
+                        help="""Image banner""")
+    active = fields.Boolean(string="Active", default=True)
+    no_of_column = fields.Selection([('3', '3'), ('4', '4'), ('5', '5')], string="No of column",
+                                    default='3',
+                                    help="No of product display in slider.")
+    prod_cat_type = fields.Selection([('product', 'Product'), ('category', 'Category')],
+                                     string="Type of slider", default='product', required=True,
+                                     help="Select product or category for whom you want to show a slider.")
+    collections_product = fields.Many2many('product.template', 'scita_product_slider_rel', 'slider_id',
+                                           'prod_id', string="Collections of product")
+    collections_category = fields.Many2many('product.public.category', 'scita_category_slider_rel',
+                                            'slider_id', 'cat_id', string="Collections of category")
+
+
+class ProductSnippetConfiguration(models.Model):
+    _name = 'product.snippet.configuration'
+    _description = "Add Multiple Product In Snippet"
+
+    name = fields.Char(string='Name', default="Trending", required=True)
+    sub_title = fields.Char(string="Sub Title", default="Lorem Ipsum is simply dummy text.",)
+    active = fields.Boolean(
+        string="Active", default=True)
+    collection_of_products = fields.Many2many('product.template', 'product_configuration_rel', 'slider_id',
+                                              'prod_id',
+                                              required=True,
+                                              string="Collection Of Products", domain="[('is_published', '=', True)]")

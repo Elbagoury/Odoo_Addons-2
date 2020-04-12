@@ -114,5 +114,26 @@
             </div>
         </section>
     </template>
-
+    <template id="deal_of_day_banner_5" name="Deal of the Day Snippet 5">
+        <section class="deal_of_day_banner_5" data-disp="deal_days">
+            <div class="container">
+                <div class='row deals_day'>
+                    <div class="col-md-6 sct_img_box">
+                        <a href="/shop">
+                            <img src="/theme_scita/static/src/img/shues.png" class="img img-fluid" alt="For Men Offer"/>
+                        </a>
+                    </div>
+                    <div class="col-md-6 sct_content_box">
+                        <div class='sct_text_content'>
+                            <h2 class="sct_title">Deal of the day</h2>
+                        </div>
+                        <div class="timer_counter_div"></div>
+                        <div class='sct_button'>
+                            <a href="/deals-of-the-day" class="btn btn-primary">Shop Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </template>
 </odoo>

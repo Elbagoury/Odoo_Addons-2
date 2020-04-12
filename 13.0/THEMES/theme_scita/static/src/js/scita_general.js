@@ -19,7 +19,18 @@ odoo.define('theme_scita.scita_general_js', function(require) {
     });
     //End megamemu
      $(document).ready(function(){
-         
+        
+        //mobile filter overlay script
+        $('.sct_btm_mobile .btn-link').on("click",function() {
+            $('.sct_shop_box').addClass("sct_shop_box_overlay");
+        });
+        $('.sct_filter_close').on("click",function() {
+            $('.sct_shop_box').removeClass("sct_shop_box_overlay");
+        });
+        if ($('button').hasClass("sct_btm_mobile_btn")){
+            $('#wrapwrap').addClass("sct-mobile-pro-list");
+        }
+
         $('li.position-static').mouseenter(
             function(){ 
                 if ($("div.o_mega_menu_container_size").length==0)
@@ -417,6 +428,8 @@ odoo.define('theme_scita.scita_general_js', function(require) {
             $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
             $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
             $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+            $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+            $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
 
             $("select#selSnippetCat").on('change',function(){
                 if($("select#selSnippetCat").val()=='banner')
@@ -444,6 +457,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='newsletter')
                 {
@@ -470,6 +486,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='deal_days')
                 {
@@ -496,6 +515,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='blog')
                 {
@@ -522,6 +544,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='our_team')
                 {
@@ -548,6 +573,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='testimonial')
                 {
@@ -574,6 +602,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='service')
                 {
@@ -600,6 +631,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='portfolio')
                 {
@@ -626,6 +660,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='advbanner')
                 {
@@ -652,6 +689,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='pricing_table')
                 {
@@ -678,6 +718,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='trust_icon')
                 {
@@ -704,6 +747,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='contact_us')
                 {
@@ -730,6 +776,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='how_it_works')
                 {
@@ -756,6 +805,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='statistics')
                 {
@@ -782,6 +834,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='content_block')
                 {
@@ -808,6 +863,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='client_snippet')
                 {
@@ -834,6 +892,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='category_snippet')
                 {
@@ -860,6 +921,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='case_study')
                 {
@@ -886,6 +950,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='brand')
                 {
@@ -912,6 +979,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='about_us')
                 {
@@ -938,6 +1008,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='accordion')
                 {
@@ -964,6 +1037,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().removeClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='timeline')
                 {
@@ -990,6 +1066,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().removeClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='timeline')
                 {
@@ -1016,6 +1095,9 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().removeClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
                 }
                 else if($("select#selSnippetCat").val()=='multi_product')
                 {
@@ -1042,6 +1124,66 @@ odoo.define('theme_scita.scita_general_js', function(require) {
                     $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
                     $("#scita_snippets [data-disp=multi_product]").parent().removeClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp1=multi_product]").parent().removeClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+
+                }
+                else if($("select#selSnippetCat").val()=='google_map_snippet')
+                {
+                    $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().removeClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().addClass("o_hidden");
+                }
+                else if($("select#selSnippetCat").val()=='html_builder')
+                {
+                    $("#scita_snippets [data-disp=banner]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=newsletter]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=deal_days]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=blog]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=our_team]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=testimonial]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=service]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=portfolio]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=advbanner]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=pricing_table]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=trust_icon]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=contact_us]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=how_it_works]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=statistics]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=content_block]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=client_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=category_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=case_study]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=brand]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=about_us]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=accordion]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=timeline]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=multi_product]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=google_map_snippet]").parent().addClass("o_hidden");
+                    $("#scita_snippets [data-disp=html_builder]").parent().removeClass("o_hidden");
                 }
             });
             return;
