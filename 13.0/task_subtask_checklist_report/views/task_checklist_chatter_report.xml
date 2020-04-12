@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="task_checklist_chatter_report">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="row mt32 page">
+                    <div class="col-xs-6">
+                        <h4>
+                            <strong>Project:</strong>
+                            <span t-field="task.project_id.name"/>
+                        </h4>
+                    </div>
+                    <div class="col-xs-6">
+                        <h4>
+                            <strong>Task:</strong>
+                            <span t-field="task.name"/>
+                        </h4>
+                    </div>
+                </div>
+                <br/>
+                <div t-if="task.checklist_activity_ids">
+                    <t t-foreach="task.checklist_activity_ids" t-as="activity">
+                        <table class="table table-bordered table-condensed">
+                            <tr>
+                                <th width="130">Activity Name</th>
+                                <td>
+                                    <span t-field="activity.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th width="130">Description</th>
+                                <td>
+                                    <span t-field="activity.description"/>
+                                </td>
+                            </tr>
+                            <tr t-if="activity.approve_user_id">
+                                <th width="130">Approve User</th>
+                                <td>
+                                    <span t-field="activity.approve_user_id.name"/>
+                                </td>
+                            </tr>
+                            <tr t-if="activity.activity_stage_id">
+                                <th width="130">Status</th>
+                                <td>
+                                    <t t-set="style" t-value="'color:black'"/>
+                                    <t t-if="activity.canceled">
+                                        <t t-set="style" t-value="'color:red'"/>
+                                    </t>
+                                    <t t-if="activity.completed">
+                                        <t t-set="style" t-value="'color:green'"/>
+                                    </t>
+                                    <t t-if="activity.progress">
+                                        <t t-set="style" t-value="'color:blue'"/>
+                                    </t>
+                                    <span t-att-style="style" t-esc="activity.activity_stage_id.name"/>
+
+                                </td>
+                            </tr>
+                            <tr>
+                                <th width="130">Chatter</th>
+                                <td>
+                                    <table>
+                                        <t t-foreach="activity.message_ids" t-as="msg">
+                                            <tr>
+                                                <td style="padding-right: 1cm; font-weight:bold;">
+                                                    <span t-field="msg.author_id"/>
+                                                    <br/>
+                                                    <div style="font-size:75%; padding-left: 3mm;">
+                                                        (<span t-field="msg.date"/>)
+                                                    </div>
+                                                </td>
+                                                <td>
+                                                    <div t-if="msg.subject">
+                                                        <span t-field="msg.subject"/>:
+                                                    </div>
+                                                    <div t-if="msg.message_type == 'notification'">
+                                                        <span t-field="msg.subtype_id.name"/>
+                                                        <t t-foreach='msg.tracking_value_ids' t-as='value'>
+                                                            <li>
+
+                                                                <t t-esc="value.field_desc"/>:
+                                                                <span>
+                                                                    <t t-if="value.old_value_char">
+                                                                        <t t-esc="value.old_value_char"/>
+                                                                        <b>&#8658;</b>
+                                                                    </t>
+                                                                    <t t-esc="value.new_value_char"/>
+                                                                </span>
+                                                            </li>
+                                                        </t>
+                                                    </div>
+                                                    <span t-field="msg.body"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </table>
+                                </td>
+                            </tr>
+                        </table>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <template id="task_checklist_chatter_report_main">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="task">
+                <t t-call="task_subtask_checklist_report.task_checklist_chatter_report"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

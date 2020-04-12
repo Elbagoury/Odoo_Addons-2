@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <template id="task_checklist_report">
+        <t t-call="web.external_layout">
+            <div class="page">
+                <div class="row mt32 page">
+                    <div class="col-xs-6">
+                        <h4>
+                            <strong>Project:</strong>
+                            <span t-field="task.project_id.name"/>
+                        </h4>
+                    </div>
+                    <div class="col-xs-6">
+                        <h4>
+                            <strong>Task:</strong>
+                            <span t-field="task.name"/>
+                        </h4>
+                    </div>
+                </div>
+                <br/>
+                <div t-if="task.checklist_activity_ids">
+                    <t t-foreach="task.checklist_activity_ids" t-as="activity">
+                        <table class="table table-bordered table-condensed">
+                            <tr>
+                                <th width="130">Activity Name</th>
+                                <td>
+                                    <span t-field="activity.name"/>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th width="130">Description</th>
+                                <td>
+                                    <span t-field="activity.description"/>
+                                </td>
+                            </tr>
+                            <tr t-if="activity.approve_user_id">
+                                <th width="130">Approve User</th>
+                                <td>
+                                    <span t-field="activity.approve_user_id.name"/>
+                                </td>
+                            </tr>
+                            <tr t-if="activity.activity_stage_id">
+                                <th width="130">Status</th>
+                                <td>
+                                    <t t-set="style" t-value="'color:black'"/>
+                                    <t t-if="activity.canceled">
+                                        <t t-set="style" t-value="'color:red'"/>
+                                    </t>
+                                    <t t-if="activity.completed">
+                                        <t t-set="style" t-value="'color:green'"/>
+                                    </t>
+                                    <t t-if="activity.progress">
+                                        <t t-set="style" t-value="'color:blue'"/>
+                                    </t>
+                                    <span t-att-style="style" t-esc="activity.activity_stage_id.name"/>
+                                </td>
+                            </tr>
+                        </table>
+                    </t>
+                </div>
+            </div>
+        </t>
+    </template>
+
+
+    <template id="task_checklist_report_main">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="task">
+                <t t-call="task_subtask_checklist_report.task_checklist_report"/>
+            </t>
+        </t>
+    </template>
+
+</odoo>

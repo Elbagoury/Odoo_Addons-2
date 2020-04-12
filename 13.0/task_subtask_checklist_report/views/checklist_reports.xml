@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <report id="report_task_checklist"
+                model="project.task"
+                name="task_subtask_checklist_report.task_checklist_report_main"
+                string="Print Checklist"
+                report_type="qweb-pdf"
+                multi="False"/>
+
+        <report id="report_task_checklist_chatter"
+                model="project.task"
+                name="task_subtask_checklist_report.task_checklist_chatter_report_main"
+                string="Print Checklist Chatter"
+                report_type="qweb-pdf"
+                multi="False"/>
+
+        <report id="report_project_checklist"
+                model="project.project"
+                name="task_subtask_checklist_report.project_checklist_report_main"
+                string="Print Checklist"
+                report_type="qweb-pdf"
+                multi="False"/>
+
+        <report id="report_project_checklist_chatter"
+                model="project.project"
+                name="task_subtask_checklist_report.project_checklist_chatter_report_main"
+                string="Print Checklist Chatter"
+                report_type="qweb-pdf"
+                multi="False"/>
+
+    </data>
+</odoo>
